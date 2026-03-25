@@ -4,127 +4,12 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>Klydo – Pitch Deck</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
-  *{margin:0;padding:0;box-sizing:border-box;}
-  body{font-family:'Inter',sans-serif;background:#0f0f0f;color:#fff;overflow-x:hidden;font-size:16px;}
-
-  nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(15,15,15,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:60px;}
-  .nav-logo{font-size:22px;font-weight:800;background:linear-gradient(135deg,#ff2d8a,#b44dff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
-  .nav-pills{display:flex;gap:6px;overflow-x:auto;}
-  .nav-pill{background:none;border:none;color:rgba(255,255,255,.45);font-size:13px;font-weight:500;cursor:pointer;padding:6px 12px;border-radius:20px;white-space:nowrap;transition:.2s;}
-  .nav-pill:hover,.nav-pill.active{background:rgba(255,45,138,.15);color:#ff2d8a;}
-
-  .slide{min-height:100vh;padding:100px 60px 60px;display:flex;flex-direction:column;justify-content:center;border-bottom:1px solid rgba(255,255,255,.06);position:relative;overflow:hidden;}
-  .slide::before{content:'';position:absolute;width:600px;height:600px;border-radius:50%;filter:blur(120px);opacity:.12;pointer-events:none;}
-  .s1::before{background:#ff2d8a;top:-200px;right:-200px;}
-  .s2::before{background:#b44dff;bottom:-200px;left:-200px;}
-  .s3::before{background:#ff2d8a;top:-100px;left:-100px;}
-  .s4::before{background:#00cfff;bottom:-200px;right:-200px;}
-  .s5::before{background:#b44dff;top:-100px;right:-100px;}
-  .s6::before{background:#ff2d8a;bottom:-100px;left:-100px;}
-  .s7::before{background:#00cfff;top:-200px;left:-200px;}
-  .s8::before{background:#b44dff;bottom:-200px;right:-200px;}
-  .s9::before{background:#ff2d8a;top:-100px;right:-100px;}
-  .s10::before{background:#00cfff;bottom:-100px;left:-100px;}
-
-  .hero{text-align:center;display:flex;flex-direction:column;align-items:center;gap:24px;}
-  .hero-logo{line-height:1;}
-  .hero-tagline{font-size:26px;font-weight:300;color:rgba(255,255,255,.6);letter-spacing:.5px;}
-  .hero-badge{background:linear-gradient(135deg,rgba(255,45,138,.15),rgba(180,77,255,.15));border:1px solid rgba(255,45,138,.3);padding:12px 32px;border-radius:50px;font-size:15px;font-weight:500;color:#ff2d8a;}
-
-  .slide-label{font-size:13px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#ff2d8a;margin-bottom:12px;}
-  .slide-title{font-size:44px;font-weight:800;line-height:1.15;margin-bottom:8px;}
-  .slide-title span{background:linear-gradient(135deg,#ff2d8a,#b44dff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
-  .divider{width:48px;height:3px;background:linear-gradient(90deg,#ff2d8a,#b44dff);border-radius:3px;margin-bottom:40px;}
-
-  .card-grid{display:grid;gap:20px;}
-  .g2{grid-template-columns:1fr 1fr;}
-  .g3{grid-template-columns:1fr 1fr 1fr;}
-  .g4{grid-template-columns:1fr 1fr 1fr 1fr;}
-
-  .card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:24px;position:relative;overflow:hidden;transition:.3s;}
-  .card:hover{background:rgba(255,255,255,.07);border-color:rgba(255,45,138,.3);}
-  .card h3{font-size:16px;font-weight:700;color:rgba(255,255,255,.9);margin-bottom:8px;}
-  .card p{font-size:15px;color:rgba(255,255,255,.5);line-height:1.6;}
-
-  .stat-card{background:linear-gradient(135deg,rgba(255,45,138,.08),rgba(180,77,255,.08));border:1px solid rgba(255,45,138,.2);border-radius:16px;padding:24px 20px;text-align:center;}
-  .stat-card .val{font-size:32px;font-weight:900;background:linear-gradient(135deg,#ff2d8a,#b44dff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
-  .stat-card .lbl{font-size:13px;color:rgba(255,255,255,.5);margin-top:6px;line-height:1.4;}
-
-  .highlight{background:linear-gradient(135deg,rgba(255,45,138,.12),rgba(180,77,255,.12));border:1px solid rgba(255,45,138,.25);border-radius:16px;padding:28px 32px;margin:24px 0;}
-  .highlight p{font-size:19px;font-weight:500;line-height:1.7;color:rgba(255,255,255,.85);}
-  .highlight strong{color:#ff2d8a;}
-
-  /* TEAM */
-  .founder-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:40px;}
-  .founder-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:32px;display:flex;flex-direction:column;gap:20px;}
-  .founder-top{display:flex;align-items:center;gap:24px;}
-  .founder-img{width:300px;height:300px;border-radius:50%;object-fit:cover;object-position:center top;border:3px solid #ff2d8a;flex-shrink:0;display:block;}
-  .founder-info .name{font-size:22px;font-weight:800;color:#fff;}
-  .founder-info .school{font-size:15px;color:#b44dff;margin-top:4px;font-weight:500;}
-  .founder-bullets{display:flex;flex-direction:column;gap:12px;}
-  .founder-bullet{display:flex;gap:10px;align-items:flex-start;}
-  .fbdot{width:7px;height:7px;border-radius:50%;background:#ff2d8a;flex-shrink:0;margin-top:7px;}
-  .founder-bullet p{font-size:15px;color:rgba(255,255,255,.6);line-height:1.6;}
-  .founder-bullet strong{color:rgba(255,255,255,.9);}
-
-  .ext-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;}
-  .ext-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:20px 16px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px;}
-  .ext-img-wrap{width:150px;height:150px;border-radius:50%;border:3px solid #ff2d8a;overflow:hidden;flex-shrink:0;}
-  .ext-img{width:150%;height:150%;object-fit:cover;object-position:center top;display:block;margin-left:-25%;}
-  .ext-name{font-size:15px;font-weight:700;color:#fff;}
-  .ext-role{font-size:12px;color:#ff2d8a;font-weight:600;}
-  .ext-desc{font-size:13px;color:rgba(255,255,255,.45);line-height:1.5;}
-
-  /* PHONE MOCKUP */
-  .phones-row{display:flex;gap:20px;justify-content:center;margin-bottom:32px;flex-wrap:nowrap;overflow-x:auto;padding:8px 0 16px;}
-  .phone{flex-shrink:0;width:240px;height:520px;background:#fff;border-radius:32px;border:8px solid #2a2a2a;box-shadow:0 0 0 1px rgba(255,255,255,.08),0 20px 60px rgba(0,0,0,.7);position:relative;overflow:hidden;}
-  .phone-notch{position:absolute;top:0;left:50%;transform:translateX(-50%);width:60px;height:18px;background:#1a1a1a;border-radius:0 0 14px 14px;z-index:3;}
-  .phone img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:contain;object-position:top center;display:block;}
-
-  .chart-bar-wrap{display:flex;flex-direction:column;gap:16px;}
-  .bar-item{display:flex;align-items:center;gap:16px;}
-  .bar-label{font-size:14px;color:rgba(255,255,255,.5);width:88px;flex-shrink:0;text-align:right;}
-  .bar-track{flex:1;height:40px;background:rgba(255,255,255,.05);border-radius:8px;overflow:hidden;}
-  .bar-fill{height:100%;border-radius:8px;background:linear-gradient(90deg,#ff2d8a,#b44dff);display:flex;align-items:center;padding-left:14px;font-size:14px;font-weight:700;color:#fff;min-width:60px;}
-
-  .metrics-row{display:flex;gap:16px;flex-wrap:wrap;}
-  .metric{flex:1;min-width:120px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:20px 16px;text-align:center;}
-  .metric .m-val{font-size:32px;font-weight:900;background:linear-gradient(135deg,#ff2d8a,#b44dff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
-  .metric .m-lbl{font-size:13px;color:rgba(255,255,255,.4);margin-top:6px;line-height:1.4;}
-
-  .section-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:32px;}
-  .eyebrow-line{flex:1;height:1px;background:linear-gradient(90deg,rgba(255,45,138,.4),transparent);}
-  .eyebrow-text{font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#ff2d8a;white-space:nowrap;}
-
-  .tag{display:inline-block;background:rgba(255,45,138,.12);border:1px solid rgba(255,45,138,.25);color:#ff2d8a;font-size:12px;font-weight:600;letter-spacing:.5px;padding:5px 14px;border-radius:50px;}
-  .tag.purple{background:rgba(180,77,255,.12);border-color:rgba(180,77,255,.25);color:#b44dff;}
-  .tag.cyan{background:rgba(0,207,255,.12);border-color:rgba(0,207,255,.25);color:#00cfff;}
-
-  .brand-grid{display:flex;flex-wrap:wrap;gap:12px;}
-  .brand-pill{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:50px;padding:11px 22px;font-size:14px;font-weight:600;color:rgba(255,255,255,.75);transition:.2s;}
-  .brand-pill:hover{background:rgba(255,45,138,.1);border-color:rgba(255,45,138,.3);color:#ff2d8a;}
-
-  .checklist{display:flex;flex-direction:column;gap:12px;}
-  .check-item{display:flex;gap:14px;align-items:flex-start;padding:16px 20px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:12px;}
-  .check-icon{width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,#ff2d8a,#b44dff);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;font-size:11px;}
-  .check-item p{font-size:14px;color:rgba(255,255,255,.65);line-height:1.6;}
-  .check-item strong{color:#fff;}
-
-  .t-sub{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:14px 18px;margin-top:10px;}
-  .t-sub p{font-size:13px;color:rgba(255,255,255,.45);}
-  .t-sub strong{color:rgba(255,255,255,.75);}
-
-  .scroll-hint{text-align:center;padding:24px;color:rgba(255,255,255,.2);font-size:14px;}
-  .scroll-hint span{display:block;font-size:20px;animation:bounce 2s infinite;}
-  @keyframes bounce{0%,100%{transform:translateY(0);}50%{transform:translateY(6px);}}
-</style>
+<link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
 <nav>
-  <div class="nav-logo"><img src="0.png" alt="Klydo" style="height:32px;width:auto;object-fit:contain;vertical-align:middle;"/></div>
+  <div class="nav-logo"><img src="klydo-logo.png" alt="Klydo" style="height:32px;width:auto;object-fit:contain;vertical-align:middle;"/></div>
   <div class="nav-pills">
     <button class="nav-pill active" onclick="scrollTo(0,0)">Overview</button>
     <button class="nav-pill" onclick="document.getElementById('why').scrollIntoView({behavior:'smooth'})">Why Now</button>
@@ -141,12 +26,12 @@
 <section class="slide s1" style="justify-content:center;align-items:center;">
   <div class="hero">
     <div class="hero-badge">Fashion · Quick Commerce · India</div>
-    <img src="0.png" alt="Klydo" class="hero-logo" style="height:120px;width:auto;object-fit:contain;"/>
+    <img src="klydo-logo.png" alt="Klydo" class="hero-logo" style="height:120px;width:auto;object-fit:contain;"/>
     <div class="hero-tagline">10X-ing fashion's invisible demand</div>
     <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:12px;">
       <span class="tag">45% WoW Growth</span>
       <span class="tag purple">NPS 72</span>
-      <span class="tag cyan">1-Day Reorder Gap</span>
+      <span class="tag dark">1-Day Reorder Gap</span>
     </div>
   </div>
   <div class="scroll-hint"><span>↓</span>Scroll to explore</div>
@@ -162,24 +47,24 @@
       <p><strong>Desire</strong> for shopping has always existed. Speed does not create demand.</p>
     </div>
     <div style="display:flex;flex-direction:column;gap:16px;margin:8px 0 32px;">
-      <div class="card" style="border-left:3px solid #ff2d8a;">
+      <div class="card" style="border-left:4px solid #FF2D8A;">
         <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
           <span class="tag" style="flex-shrink:0;">Step 1</span>
-          <p style="font-size:16px;color:rgba(255,255,255,.7);">Shopping desire exists latently — some realized, some unrealized / forgotten</p>
+          <p style="font-size:16px;color:rgba(0,0,0,.6);">Shopping desire exists latently — some realized, some unrealized / forgotten</p>
         </div>
       </div>
-      <div style="text-align:center;color:#b44dff;font-size:24px;">↓</div>
-      <div class="card" style="border-left:3px solid #b44dff;">
+      <div style="text-align:center;color:#8B45D6;font-size:24px;">↓</div>
+      <div class="card" style="border-left:4px solid #8B45D6;">
         <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
           <span class="tag purple" style="flex-shrink:0;">Step 2</span>
-          <p style="font-size:16px;color:rgba(255,255,255,.7);">Speed converts <strong style="color:#b44dff;">latent desire</strong> into <strong style="color:#ff2d8a;">realized demand</strong> because the cost of acting on desire has collapsed <em style="color:rgba(255,255,255,.4);font-size:13px;">(reduced time to product)</em></p>
+          <p style="font-size:16px;color:rgba(0,0,0,.6);">Speed converts <strong style="color:#8B45D6;">latent desire</strong> into <strong style="color:#FF2D8A;">realized demand</strong> because the cost of acting on desire has collapsed <em style="color:rgba(0,0,0,.35);font-size:13px;">(reduced time to product)</em></p>
         </div>
       </div>
-      <div style="text-align:center;color:#00cfff;font-size:24px;">↓</div>
-      <div class="card" style="border-left:3px solid #00cfff;background:linear-gradient(135deg,rgba(0,207,255,.07),rgba(255,45,138,.07));">
+      <div style="text-align:center;color:#FF2D8A;font-size:24px;">↓</div>
+      <div class="card" style="border-left:4px solid #FF2D8A;background:linear-gradient(135deg,rgba(255,45,138,.04),rgba(139,69,214,.04));">
         <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
-          <span class="tag cyan" style="flex-shrink:0;">Outcome</span>
-          <p style="font-size:17px;font-weight:600;color:#fff;"><strong style="color:#00cfff;">More shopping moments per user</strong> become monetizable</p>
+          <span class="tag dark" style="flex-shrink:0;">Outcome</span>
+          <p style="font-size:17px;font-weight:600;color:#1a1a2e;"><strong style="color:#FF2D8A;">More shopping moments per user</strong> become monetizable</p>
         </div>
       </div>
     </div>
@@ -227,7 +112,7 @@
   <div class="founder-grid">
     <div class="founder-card">
       <div class="founder-top">
-        <img class="founder-img" src="1.png" alt="Ankit Agarwal"/>
+        <div class="founder-img-wrap"><img class="founder-img" src="ankit-agarwal.png" alt="Ankit Agarwal"/></div>
         <div class="founder-info">
           <div class="name">Ankit Agarwal</div>
           <div class="school">IIT Delhi</div>
@@ -240,7 +125,7 @@
     </div>
     <div class="founder-card">
       <div class="founder-top">
-        <img class="founder-img" src="2.png" alt="Pradeep Yadav"/>
+        <div class="founder-img-wrap"><img class="founder-img" src="pradeep-yadav.png" alt="Pradeep Yadav"/></div>
         <div class="founder-info">
           <div class="name">Pradeep Yadav</div>
           <div class="school">IIT Delhi · IIM Ahmedabad</div>
@@ -256,31 +141,31 @@
   <div class="slide-label" style="margin-bottom:20px;">Extended Team</div>
   <div class="ext-grid">
     <div class="ext-card">
-      <div class="ext-img-wrap"><img class="ext-img" src="3.png" alt="Sabina Nazneen"/></div>
+      <div class="ext-img-wrap"><img class="ext-img" src="sabina-nazneen.png" alt="Sabina Nazneen"/></div>
       <div class="ext-name">Sabina Nazneen</div>
       <div class="ext-role">Head of Marketing</div>
       <div class="ext-desc">Fashion Experience Lead @ Udaan · Associate Director @ Flipkart (2014–2024)</div>
     </div>
     <div class="ext-card">
-      <div class="ext-img-wrap"><img class="ext-img" src="4.png" alt="Manikanta Kondeti"/></div>
+      <div class="ext-img-wrap"><img class="ext-img" src="manikanta-kondeti.png" alt="Manikanta Kondeti"/></div>
       <div class="ext-name">Manikanta Kondeti</div>
       <div class="ext-role">Head of Engineering</div>
       <div class="ext-desc">Lead Product Engineer @ Udaan · Head of AI @ Launch.Today · IIIT Hyderabad</div>
     </div>
     <div class="ext-card">
-      <div class="ext-img-wrap"><img class="ext-img" src="5.png" alt="Chandnni Nain"/></div>
+      <div class="ext-img-wrap"><img class="ext-img" src="chandnni-nain.png" alt="Chandnni Nain"/></div>
       <div class="ext-name">Chandnni Nain</div>
       <div class="ext-role">Chief Business Officer</div>
       <div class="ext-desc">VP Business @ Groyyo · Private Brands @ Udaan · Director Category @ Hopscotch</div>
     </div>
     <div class="ext-card">
-      <div class="ext-img-wrap"><img class="ext-img" src="6.png" alt="Divya Tak"/></div>
+      <div class="ext-img-wrap"><img class="ext-img" src="divya-tak.png" alt="Divya Tak"/></div>
       <div class="ext-name">Divya Tak</div>
       <div class="ext-role">Product Design</div>
       <div class="ext-desc">Independent Product & Game Designer (2012–2025) · VFX Producer "The Fable" (Leeds 2024) · IIT Kharagpur</div>
     </div>
     <div class="ext-card">
-      <div class="ext-img-wrap"><img class="ext-img" src="7.png" alt="Kahran Singh"/></div>
+      <div class="ext-img-wrap"><img class="ext-img" src="kahran-singh.png" alt="Kahran Singh"/></div>
       <div class="ext-name">Kahran Singh</div>
       <div class="ext-role">Chief Revenue Officer</div>
       <div class="ext-desc">Former CEO @ Vidyanext · GP @ Tres Monos Capital — growth & GTM lead</div>
@@ -356,12 +241,12 @@
   <div style="margin-top:36px;">
     <div class="slide-label" style="margin-bottom:16px;">Dark Store Rollout — 20 Stores · 3 States by OND26</div>
     <div class="card-grid" style="grid-template-columns:repeat(6,1fr);gap:12px;">
-      <div class="stat-card"><div class="val">1</div><div class="lbl">Jan 26<br/><span style="color:#ff2d8a;">BLR</span></div></div>
-      <div class="stat-card"><div class="val">1</div><div class="lbl">Feb 26<br/><span style="color:#ff2d8a;">BLR</span></div></div>
-      <div class="stat-card"><div class="val">2</div><div class="lbl">Mar 26<br/><span style="color:#ff2d8a;">BLR</span></div></div>
-      <div class="stat-card"><div class="val">5</div><div class="lbl">Apr 26<br/><span style="color:#ff2d8a;">BLR + DEL-NCR</span></div></div>
-      <div class="stat-card"><div class="val">15</div><div class="lbl">JAS 26<br/><span style="color:#ff2d8a;">BLR + DEL-NCR</span></div></div>
-      <div class="stat-card" style="background:linear-gradient(135deg,rgba(255,45,138,.2),rgba(180,77,255,.2));border-color:rgba(255,45,138,.4);"><div class="val">20</div><div class="lbl">OND 26<br/><span style="color:#ff2d8a;">BLR + DEL-NCR + BOM</span></div></div>
+      <div class="stat-card"><div class="val">1</div><div class="lbl">Jan 26<br/><span style="color:#FF2D8A;">BLR</span></div></div>
+      <div class="stat-card"><div class="val">1</div><div class="lbl">Feb 26<br/><span style="color:#FF2D8A;">BLR</span></div></div>
+      <div class="stat-card"><div class="val">2</div><div class="lbl">Mar 26<br/><span style="color:#FF2D8A;">BLR</span></div></div>
+      <div class="stat-card"><div class="val">5</div><div class="lbl">Apr 26<br/><span style="color:#FF2D8A;">BLR + DEL-NCR</span></div></div>
+      <div class="stat-card"><div class="val">15</div><div class="lbl">JAS 26<br/><span style="color:#FF2D8A;">BLR + DEL-NCR</span></div></div>
+      <div class="stat-card" style="background:linear-gradient(135deg,rgba(255,45,138,.12),rgba(139,69,214,.12));border-color:rgba(255,45,138,.3);"><div class="val">20</div><div class="lbl">OND 26<br/><span style="color:#FF2D8A;">BLR + DEL-NCR + BOM</span></div></div>
     </div>
   </div>
 </section>
@@ -385,21 +270,21 @@
     <div class="card" style="padding:32px;">
       <div class="slide-label" style="margin-bottom:20px;">Sell-Through Distribution</div>
       <div style="display:flex;flex-direction:column;gap:10px;">
-        <div style="display:flex;justify-content:space-between;font-size:13px;color:rgba(255,255,255,.4);"><span>0%</span><span>Sell Through →</span><span>60%+</span></div>
-        <div style="height:80px;background:rgba(255,255,255,.04);border-radius:10px;position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:0 10px 10px;gap:3px;">
-          <div style="width:8%;height:20%;background:rgba(255,45,138,.3);border-radius:3px 3px 0 0;"></div>
-          <div style="width:8%;height:35%;background:rgba(255,45,138,.4);border-radius:3px 3px 0 0;"></div>
-          <div style="width:8%;height:55%;background:rgba(255,45,138,.5);border-radius:3px 3px 0 0;"></div>
-          <div style="width:8%;height:75%;background:rgba(255,45,138,.65);border-radius:3px 3px 0 0;"></div>
-          <div style="width:8%;height:100%;background:linear-gradient(180deg,#ff2d8a,#b44dff);border-radius:3px 3px 0 0;"></div>
-          <div style="width:8%;height:85%;background:rgba(180,77,255,.6);border-radius:3px 3px 0 0;"></div>
-          <div style="width:8%;height:60%;background:rgba(180,77,255,.4);border-radius:3px 3px 0 0;"></div>
-          <div style="width:8%;height:40%;background:rgba(180,77,255,.3);border-radius:3px 3px 0 0;"></div>
-          <div style="width:8%;height:25%;background:rgba(180,77,255,.2);border-radius:3px 3px 0 0;"></div>
-          <div style="width:8%;height:15%;background:rgba(180,77,255,.15);border-radius:3px 3px 0 0;"></div>
-          <div style="position:absolute;left:35%;top:6px;font-size:11px;font-weight:700;color:#ff2d8a;">← 40% median</div>
+        <div style="display:flex;justify-content:space-between;font-size:13px;color:rgba(0,0,0,.35);"><span>0%</span><span>Sell Through →</span><span>60%+</span></div>
+        <div style="height:80px;background:rgba(0,0,0,.02);border-radius:12px;position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:0 10px 10px;gap:3px;">
+          <div style="width:8%;height:20%;background:rgba(255,45,138,.2);border-radius:4px 4px 0 0;"></div>
+          <div style="width:8%;height:35%;background:rgba(255,45,138,.3);border-radius:4px 4px 0 0;"></div>
+          <div style="width:8%;height:55%;background:rgba(255,45,138,.4);border-radius:4px 4px 0 0;"></div>
+          <div style="width:8%;height:75%;background:rgba(255,45,138,.55);border-radius:4px 4px 0 0;"></div>
+          <div style="width:8%;height:100%;background:linear-gradient(180deg,#FF2D8A,#8B45D6);border-radius:4px 4px 0 0;"></div>
+          <div style="width:8%;height:85%;background:rgba(139,69,214,.5);border-radius:4px 4px 0 0;"></div>
+          <div style="width:8%;height:60%;background:rgba(139,69,214,.35);border-radius:4px 4px 0 0;"></div>
+          <div style="width:8%;height:40%;background:rgba(139,69,214,.25);border-radius:4px 4px 0 0;"></div>
+          <div style="width:8%;height:25%;background:rgba(139,69,214,.15);border-radius:4px 4px 0 0;"></div>
+          <div style="width:8%;height:15%;background:rgba(139,69,214,.1);border-radius:4px 4px 0 0;"></div>
+          <div style="position:absolute;left:35%;top:6px;font-size:11px;font-weight:700;color:#FF2D8A;">← 40% median</div>
         </div>
-        <p style="font-size:13px;color:rgba(255,255,255,.4);text-align:center;">40% median sell-through across all brands in 6 weeks of operations</p>
+        <p style="font-size:13px;color:rgba(0,0,0,.35);text-align:center;">40% median sell-through across all brands in 6 weeks of operations</p>
       </div>
     </div>
   </div>
@@ -410,8 +295,8 @@
   <div class="slide-label">Brand Universe</div>
   <div class="slide-title">Legacy + New-Age D2C <span>for Core Audience</span></div>
   <div class="divider"></div>
-  <div style="border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.08);margin-bottom:28px;background:rgba(255,255,255,.03);">
-    <img src="8.png" alt="Brand Universe" style="width:100%;display:block;object-fit:contain;max-height:320px;"/>
+  <div style="border-radius:16px;overflow:hidden;border:1px solid rgba(0,0,0,.06);margin-bottom:28px;background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.04);">
+    <img src="brand-universe.png" alt="Brand Universe" style="width:100%;display:block;object-fit:contain;max-height:320px;"/>
   </div>
   <div class="brand-grid">
     <div class="brand-pill">PALMONAS</div><div class="brand-pill">GIVA</div><div class="brand-pill">CHUPPS</div>
@@ -434,11 +319,11 @@
   <div class="divider"></div>
 
   <div class="phones-row">
-    <div class="phone"><div class="phone-notch"></div><img src="9.png" alt="HM NOW screen 1"/></div>
-    <div class="phone"><div class="phone-notch"></div><img src="10.png" alt="HM NOW screen 2"/></div>
-    <div class="phone"><div class="phone-notch"></div><img src="11.png" alt="HM NOW screen 3"/></div>
-    <div class="phone"><div class="phone-notch"></div><img src="12.png" alt="HM NOW screen 4"/></div>
-    <div class="phone"><div class="phone-notch"></div><img src="13.png" alt="HM NOW screen 5"/></div>
+    <div class="phone"><div class="phone-notch"></div><img src="hmnow-screen-1.png" alt="HM NOW screen 1"/></div>
+    <div class="phone"><div class="phone-notch"></div><img src="hmnow-screen-2.png" alt="HM NOW screen 2"/></div>
+    <div class="phone"><div class="phone-notch"></div><img src="hmnow-screen-3.png" alt="HM NOW screen 3"/></div>
+    <div class="phone"><div class="phone-notch"></div><img src="hmnow-screen-4.png" alt="HM NOW screen 4"/></div>
+    <div class="phone"><div class="phone-notch"></div><img src="hmnow-screen-5.png" alt="HM NOW screen 5"/></div>
   </div>
 
   <div class="highlight">
@@ -460,8 +345,8 @@
     <div>
       <div class="slide-label" style="margin-bottom:14px;">Requirements from H&M</div>
       <div class="checklist">
-        <div class="check-item" style="border-color:rgba(180,77,255,.2);"><div class="check-icon" style="background:linear-gradient(135deg,#b44dff,#00cfff);">→</div><p><strong>Web UI:</strong> Configure load balancer routing · Route hm.com/hmnow traffic to Klydo infrastructure · Implement reverse proxy / path routing from H&M LB to Klydo backend</p></div>
-        <div class="check-item" style="border-color:rgba(0,207,255,.2);"><div class="check-icon" style="background:linear-gradient(135deg,#00cfff,#b44dff);">→</div><p><strong>Mobile App UI:</strong> Access to H&M mobile codebase</p></div>
+        <div class="check-item" style="border-color:rgba(139,69,214,.15);"><div class="check-icon" style="background:linear-gradient(135deg,#8B45D6,#FF2D8A);">→</div><p><strong>Web UI:</strong> Configure load balancer routing · Route hm.com/hmnow traffic to Klydo infrastructure · Implement reverse proxy / path routing from H&M LB to Klydo backend</p></div>
+        <div class="check-item" style="border-color:rgba(139,69,214,.15);"><div class="check-icon" style="background:linear-gradient(135deg,#8B45D6,#FF2D8A);">→</div><p><strong>Mobile App UI:</strong> Access to H&M mobile codebase</p></div>
       </div>
     </div>
   </div>
@@ -474,13 +359,13 @@
   <div class="divider"></div>
   <div style="display:flex;flex-direction:column;gap:20px;">
     <div class="card-grid g2" style="gap:16px;">
-      <div class="card" style="border-left:3px solid #ff2d8a;">
+      <div class="card" style="border-left:4px solid #FF2D8A;">
         <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;">
           <h3>Intelligent Cataloging</h3><span class="tag" style="font-size:11px;">Step 1</span>
         </div>
         <p>Direct pull of catalog data from H&M to Klydo/Fynd daily — or manual upload of new styles via Excel.</p>
       </div>
-      <div class="card" style="border-left:3px solid #b44dff;">
+      <div class="card" style="border-left:4px solid #8B45D6;">
         <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;">
           <h3>Purchase Order / Stock Transfer</h3><span class="tag purple" style="font-size:11px;">Step 2</span>
         </div>
@@ -488,11 +373,11 @@
         <div class="t-sub" style="margin-top:10px;"><p><strong>Omni variant:</strong> H&M store set up as darkstore in Fynd. POS integrated for styles & stock. Store sales pushed via API, reducing stock from Fynd in real-time.</p></div>
       </div>
     </div>
-    <div style="text-align:center;color:#ff2d8a;font-size:22px;">↓</div>
+    <div style="text-align:center;color:#FF2D8A;font-size:22px;">↓</div>
     <div class="card-grid g2" style="gap:16px;">
-      <div class="card" style="border-left:3px solid #00cfff;">
+      <div class="card" style="border-left:4px solid #8B45D6;">
         <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;">
-          <h3>Location-Based Discovery via APIs</h3><span class="tag cyan" style="font-size:11px;">Step 3</span>
+          <h3>Location-Based Discovery via APIs</h3><span class="tag purple" style="font-size:11px;">Step 3</span>
         </div>
         <p>API architecture ensures HMNow users only see products available at the Bangalore darkstore. "Immediate delivery" badge appears when stock is present.</p>
         <div class="t-sub" style="margin-top:10px;">
@@ -500,11 +385,11 @@
           <p style="margin-top:5px;"><strong>Real-Time Inventory:</strong> In-stock items surfaced dynamically</p>
           <p style="margin-top:5px;"><strong>Personalized Browsing:</strong> Tailored to regional trends & local stock</p>
         </div>
-        <div style="margin-top:16px;border-radius:12px;overflow:hidden;border:1px solid rgba(0,207,255,.2);">
-          <img src="14.jpeg" alt="Bangalore delivery zones map" style="width:auto;height:280px;display:block;object-fit:contain;margin:0 auto;"/>
+        <div style="margin-top:16px;border-radius:16px;overflow:hidden;border:1px solid rgba(139,69,214,.15);">
+          <img src="bangalore-zones.jpeg" alt="Bangalore delivery zones map" style="width:auto;height:280px;display:block;object-fit:contain;margin:0 auto;"/>
         </div>
       </div>
-      <div class="card" style="border-left:3px solid #ff2d8a;">
+      <div class="card" style="border-left:4px solid #FF2D8A;">
         <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;">
           <h3>Integrated Order Management</h3><span class="tag" style="font-size:11px;">Step 4</span>
         </div>
@@ -512,9 +397,9 @@
         <div class="t-sub" style="margin-top:10px;"><p><strong>Omni variant:</strong> Order instantly pushed to H&M POS — stock reduced automatically. Store staff packs and labels the order separately.</p></div>
       </div>
     </div>
-    <div style="text-align:center;color:#ff2d8a;font-size:22px;">↓</div>
+    <div style="text-align:center;color:#FF2D8A;font-size:22px;">↓</div>
     <div class="card-grid g2" style="gap:16px;">
-      <div class="card" style="border-left:3px solid #b44dff;">
+      <div class="card" style="border-left:4px solid #8B45D6;">
         <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;">
           <h3>Last-Mile Delivery & Real-Time Updates</h3><span class="tag purple" style="font-size:11px;">Step 5</span>
         </div>
@@ -525,20 +410,20 @@
           <p style="margin-top:5px;"><strong>Secure Delivery:</strong> OTP forwarded white-labeled as HMNow</p>
         </div>
       </div>
-      <div class="card" style="border-left:3px solid #00cfff;">
+      <div class="card" style="border-left:4px solid #FF2D8A;">
         <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;">
-          <h3>Post-Order Returns Flow</h3><span class="tag cyan" style="font-size:11px;">Step 6</span>
+          <h3>Post-Order Returns Flow</h3><span class="tag" style="font-size:11px;">Step 6</span>
         </div>
         <div style="display:flex;flex-direction:column;gap:8px;margin-top:4px;">
-          <div style="display:flex;gap:10px;align-items:center;"><div style="width:24px;height:24px;border-radius:50%;background:rgba(0,207,255,.15);border:1px solid rgba(0,207,255,.3);font-size:11px;font-weight:700;color:#00cfff;display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</div><p style="font-size:14px;color:rgba(255,255,255,.6);">User requests return</p></div>
-          <div style="width:1px;height:8px;background:rgba(0,207,255,.3);margin-left:12px;"></div>
-          <div style="display:flex;gap:10px;align-items:center;"><div style="width:24px;height:24px;border-radius:50%;background:rgba(0,207,255,.15);border:1px solid rgba(0,207,255,.3);font-size:11px;font-weight:700;color:#00cfff;display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</div><p style="font-size:14px;color:rgba(255,255,255,.6);">Return + reverse shipment created in Fynd</p></div>
-          <div style="width:1px;height:8px;background:rgba(0,207,255,.3);margin-left:12px;"></div>
-          <div style="display:flex;gap:10px;align-items:center;"><div style="width:24px;height:24px;border-radius:50%;background:rgba(0,207,255,.15);border:1px solid rgba(0,207,255,.3);font-size:11px;font-weight:700;color:#00cfff;display:flex;align-items:center;justify-content:center;flex-shrink:0;">3</div><p style="font-size:14px;color:rgba(255,255,255,.6);">OTP sent to customer (white-labeled as HMNow)</p></div>
-          <div style="width:1px;height:8px;background:rgba(0,207,255,.3);margin-left:12px;"></div>
-          <div style="display:flex;gap:10px;align-items:center;"><div style="width:24px;height:24px;border-radius:50%;background:rgba(0,207,255,.15);border:1px solid rgba(0,207,255,.3);font-size:11px;font-weight:700;color:#00cfff;display:flex;align-items:center;justify-content:center;flex-shrink:0;">4</div><p style="font-size:14px;color:rgba(255,255,255,.6);">Delivery executive picks up → brought to warehouse</p></div>
-          <div style="width:1px;height:8px;background:rgba(0,207,255,.3);margin-left:12px;"></div>
-          <div style="display:flex;gap:10px;align-items:center;"><div style="width:24px;height:24px;border-radius:50%;background:rgba(255,45,138,.15);border:1px solid rgba(255,45,138,.3);font-size:11px;font-weight:700;color:#ff2d8a;display:flex;align-items:center;justify-content:center;flex-shrink:0;">5</div><p style="font-size:14px;color:rgba(255,255,255,.6);">Quality check passed → Klydo webhooks H&M → <strong style="color:#4ade80;">Refund initiated by HMNow</strong></p></div>
+          <div style="display:flex;gap:10px;align-items:center;"><div style="width:24px;height:24px;border-radius:50%;background:rgba(255,45,138,.1);border:1px solid rgba(255,45,138,.2);font-size:11px;font-weight:700;color:#FF2D8A;display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</div><p style="font-size:14px;color:rgba(0,0,0,.5);">User requests return</p></div>
+          <div style="width:1px;height:8px;background:rgba(255,45,138,.2);margin-left:12px;"></div>
+          <div style="display:flex;gap:10px;align-items:center;"><div style="width:24px;height:24px;border-radius:50%;background:rgba(255,45,138,.1);border:1px solid rgba(255,45,138,.2);font-size:11px;font-weight:700;color:#FF2D8A;display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</div><p style="font-size:14px;color:rgba(0,0,0,.5);">Return + reverse shipment created in Fynd</p></div>
+          <div style="width:1px;height:8px;background:rgba(255,45,138,.2);margin-left:12px;"></div>
+          <div style="display:flex;gap:10px;align-items:center;"><div style="width:24px;height:24px;border-radius:50%;background:rgba(255,45,138,.1);border:1px solid rgba(255,45,138,.2);font-size:11px;font-weight:700;color:#FF2D8A;display:flex;align-items:center;justify-content:center;flex-shrink:0;">3</div><p style="font-size:14px;color:rgba(0,0,0,.5);">OTP sent to customer (white-labeled as HMNow)</p></div>
+          <div style="width:1px;height:8px;background:rgba(255,45,138,.2);margin-left:12px;"></div>
+          <div style="display:flex;gap:10px;align-items:center;"><div style="width:24px;height:24px;border-radius:50%;background:rgba(255,45,138,.1);border:1px solid rgba(255,45,138,.2);font-size:11px;font-weight:700;color:#FF2D8A;display:flex;align-items:center;justify-content:center;flex-shrink:0;">4</div><p style="font-size:14px;color:rgba(0,0,0,.5);">Delivery executive picks up → brought to warehouse</p></div>
+          <div style="width:1px;height:8px;background:rgba(255,45,138,.2);margin-left:12px;"></div>
+          <div style="display:flex;gap:10px;align-items:center;"><div style="width:24px;height:24px;border-radius:50%;background:rgba(255,45,138,.1);border:1px solid rgba(255,45,138,.2);font-size:11px;font-weight:700;color:#FF2D8A;display:flex;align-items:center;justify-content:center;flex-shrink:0;">5</div><p style="font-size:14px;color:rgba(0,0,0,.5);">Quality check passed → Klydo webhooks H&M → <strong style="color:#8B45D6;">Refund initiated by HMNow</strong></p></div>
         </div>
       </div>
     </div>
