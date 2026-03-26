@@ -20,17 +20,18 @@ A single-page HTML pitch deck for **Klydo** — a fashion quick-commerce startup
 
 ## Design System
 
-- **Font:** Raleway (Google Fonts CDN)
+- **Font:** Raleway (Google Fonts CDN) — weights: 400 (body), 600 (labels), 700 (headings). No other weights.
 - **Primary color:** `#FF2D8A` (Klydo pink — from logo)
 - **Secondary color:** `#8B45D6` (purple — from logo)
 - **Tertiary color:** `#00D4DC` (cyan — from logo)
-- **Background:** white (`#fff`), text is `#1a1a2e`
-- **Shape language:** Rounded rectangles — `border-radius: 16px` on cards, `10px` on tags/pills/bars. NOT fully rounded (no `999px`).
-- **Gradients:** Pink-to-purple (`linear-gradient(135deg, #FF2D8A, #8B45D6)`) used on accent text, dividers, bar fills, and check icons
+- **Background:** white (`#fff`), cards/surfaces use flat `#f7f7f8`. Text is `#1a1a2e`.
+- **Card style:** Flat colored backgrounds, NO borders. Cards use `#f7f7f8` or tinted brand colors (e.g. `rgba(255,45,138,.07)`). Never `border: 1px solid ...`.
+- **Shape language:** Rounded rectangles — `border-radius: 16px` on cards, `10px` on tags/bars. NOT fully rounded (no `999px`).
+- **Gradients:** Pink-to-purple (`linear-gradient(135deg, #FF2D8A, #8B45D6)`) on accent text, dividers, bar fills, check icons. Divider uses all three colors.
 
 ## Architecture Notes
 
 - **Navigation:** Fixed top nav with pill buttons that smooth-scroll to section IDs (`why`, `pmf`, `team`, `growth`, `scale`, `brands`, `hm`). A scroll listener highlights the active pill.
 - **Slides:** Each `<section class="slide sN">` is a full-viewport slide. Decorative gradient blurs via `::before` pseudo-elements per slide class (`s1`–`s10`).
-- **Reusable CSS patterns:** `.card-grid` with `.g2`/`.g3`/`.g4` for column layouts, `.stat-card` for metric callouts, `.highlight` for emphasis blocks, `.checklist` for feature lists, `.phones-row > .phone` for device mockups, `.tag` / `.tag.teal` / `.tag.dark` for badges.
+- **Reusable CSS patterns:** `.card-grid` with `.g2`/`.g3`/`.g4` for column layouts, `.stat-card` for metric callouts, `.highlight` for emphasis blocks, `.checklist` for feature lists, `.phones-row > .phone` for device mockups, `.tag` / `.tag.purple` / `.tag.cyan` / `.tag.dark` for badges.
 - When adding new slides, add a `<section class="slide sN">` and a matching `::before` rule in `style.css`. Add a nav pill if the section should be navigable.
