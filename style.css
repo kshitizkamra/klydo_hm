@@ -148,7 +148,7 @@ nav{
 .founder-card:hover{background:#f0f0f2;}
 .founder-top{display:flex;align-items:center;gap:24px;}
 .founder-img-wrap{
-  width:260px;height:260px;border-radius:50%;
+  width:340px;height:340px;border-radius:50%;
   overflow:hidden;flex-shrink:0;
   background:#eee;
 }
@@ -179,7 +179,7 @@ nav{
 }
 .ext-card:hover{background:#f0f0f2;transform:translateY(-2px);}
 .ext-img-wrap{
-  width:180px;height:180px;border-radius:50%;
+  width:234px;height:234px;border-radius:50%;
   overflow:hidden;flex-shrink:0;
   background:#eee;
 }
