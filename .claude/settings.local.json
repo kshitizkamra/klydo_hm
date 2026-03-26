@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:klydo.in)",
+      "Bash(mv 0.png klydo-logo.png)",
+      "Bash(mv 1.png ankit-agarwal.png)",
+      "Bash(mv 2.png pradeep-yadav.png)",
+      "Bash(mv 3.png sabina-nazneen.png)",
+      "Bash(mv 4.png manikanta-kondeti.png)"
+    ]
+  }
+}
