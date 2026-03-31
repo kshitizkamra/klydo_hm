@@ -19,6 +19,8 @@
     <button class="nav-pill" onclick="document.getElementById('scale').scrollIntoView({behavior:'smooth'})">Scale</button>
     <button class="nav-pill" onclick="document.getElementById('brands').scrollIntoView({behavior:'smooth'})">Brands</button>
     <button class="nav-pill" onclick="document.getElementById('hm').scrollIntoView({behavior:'smooth'})">H&M NOW</button>
+    <button class="nav-pill" onclick="document.getElementById('arch').scrollIntoView({behavior:'smooth'})">Architecture</button>
+    <button class="nav-pill" onclick="document.getElementById('security').scrollIntoView({behavior:'smooth'})">Security</button>
   </div>
 </nav>
 
@@ -343,13 +345,6 @@
         <div class="check-item"><div class="check-icon">✓</div><p><strong>Delivery performance analytics</strong>, order metrics, return rates</p></div>
       </div>
     </div>
-    <div>
-      <div class="slide-label" style="margin-bottom:14px;">Requirements from H&M</div>
-      <div class="checklist">
-        <div class="check-item" style="background:rgba(139,69,214,.07);"><div class="check-icon" style="background:linear-gradient(135deg,#8B45D6,#FF2D8A);">→</div><p><strong>Web UI:</strong> Configure load balancer routing · Route hm.com/hmnow traffic to Klydo infrastructure · Implement reverse proxy / path routing from H&M LB to Klydo backend</p></div>
-        <div class="check-item" style="background:rgba(139,69,214,.07);"><div class="check-icon" style="background:linear-gradient(135deg,#8B45D6,#FF2D8A);">→</div><p><strong>Mobile App UI:</strong> Access to H&M mobile codebase</p></div>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -413,27 +408,328 @@
       </div>
       <div class="card" style="background:rgba(0,212,220,.06);">
         <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;">
-          <h3>Post-Order Returns Flow</h3><span class="tag cyan" style="font-size:11px;">Step 6</span>
+          <h3>Post-Order Returns</h3><span class="tag cyan" style="font-size:11px;">Step 6</span>
         </div>
-        <div style="display:flex;flex-direction:column;gap:8px;margin-top:4px;">
-          <div style="display:flex;gap:10px;align-items:center;"><div style="width:24px;height:24px;border-radius:50%;background:rgba(255,45,138,.12);font-size:11px;font-weight:700;color:#FF2D8A;display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</div><p style="font-size:14px;color:rgba(0,0,0,.5);">User requests return</p></div>
-          <div style="width:2px;height:8px;background:rgba(255,45,138,.15);margin-left:12px;border-radius:1px;"></div>
-          <div style="display:flex;gap:10px;align-items:center;"><div style="width:24px;height:24px;border-radius:50%;background:rgba(255,45,138,.12);font-size:11px;font-weight:700;color:#FF2D8A;display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</div><p style="font-size:14px;color:rgba(0,0,0,.5);">Return + reverse shipment created in Fynd</p></div>
-          <div style="width:2px;height:8px;background:rgba(255,45,138,.15);margin-left:12px;border-radius:1px;"></div>
-          <div style="display:flex;gap:10px;align-items:center;"><div style="width:24px;height:24px;border-radius:50%;background:rgba(255,45,138,.12);font-size:11px;font-weight:700;color:#FF2D8A;display:flex;align-items:center;justify-content:center;flex-shrink:0;">3</div><p style="font-size:14px;color:rgba(0,0,0,.5);">OTP sent to customer (white-labeled as HMNow)</p></div>
-          <div style="width:2px;height:8px;background:rgba(255,45,138,.15);margin-left:12px;border-radius:1px;"></div>
-          <div style="display:flex;gap:10px;align-items:center;"><div style="width:24px;height:24px;border-radius:50%;background:rgba(255,45,138,.12);font-size:11px;font-weight:700;color:#FF2D8A;display:flex;align-items:center;justify-content:center;flex-shrink:0;">4</div><p style="font-size:14px;color:rgba(0,0,0,.5);">Delivery executive picks up → brought to warehouse</p></div>
-          <div style="width:2px;height:8px;background:rgba(255,45,138,.15);margin-left:12px;border-radius:1px;"></div>
-          <div style="display:flex;gap:10px;align-items:center;"><div style="width:24px;height:24px;border-radius:50%;background:rgba(255,45,138,.12);font-size:11px;font-weight:700;color:#FF2D8A;display:flex;align-items:center;justify-content:center;flex-shrink:0;">5</div><p style="font-size:14px;color:rgba(0,0,0,.5);">Quality check passed → Klydo webhooks H&M → <strong style="color:#8B45D6;">Refund initiated by HMNow</strong></p></div>
+        <p>Fully automated 6-step return loop — customer initiates return, eligibility auto-validated, reverse shipment created, pickup scheduled, QC at dark store, refund processed.</p>
+        <div class="t-sub" style="margin-top:10px;"><p><strong>Average resolution:</strong> &lt; 48 hours · No manual intervention · All white-labeled as HMNow</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 11: ARCHITECTURE -->
+<section class="slide s11" id="arch">
+  <div class="slide-label">Architecture</div>
+  <div class="slide-title">H&amp;M's Experience, <span>Klydo's Engine</span></div>
+  <div class="divider"></div>
+
+  <div class="highlight" style="margin-top:0;margin-bottom:28px;">
+    <p>H&amp;M keeps <strong>full customer ownership</strong>. Klydo is invisible infrastructure behind HM NOW.</p>
+  </div>
+
+  <!-- Architecture Diagram -->
+  <div style="display:flex;flex-direction:column;align-items:center;gap:0;margin-bottom:36px;">
+    <!-- Top: H&M App -->
+    <div style="background:rgba(0,0,0,.05);border-radius:16px;padding:16px 32px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:center;">H&amp;M App / hm.com</div>
+    <div style="width:2px;height:20px;background:linear-gradient(180deg,rgba(0,0,0,.15),#FF2D8A);"></div>
+    <div style="color:#FF2D8A;font-size:16px;font-weight:700;">&#x25BC;</div>
+    <!-- H&M Cloud Environment -->
+    <div style="background:rgba(255,45,138,.05);border-radius:16px;padding:28px 32px;width:100%;max-width:700px;position:relative;">
+      <div style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#FF2D8A;margin-bottom:16px;">H&amp;M's Cloud Environment</div>
+      <div style="display:flex;gap:16px;justify-content:center;">
+        <div style="flex:1;background:#fff;border-radius:12px;padding:18px 16px;text-align:center;">
+          <div style="font-size:14px;font-weight:700;color:#1a1a2e;">HM NOW UI</div>
+          <div style="font-size:12px;color:rgba(0,0,0,.4);margin-top:4px;">H&amp;M design system</div>
+        </div>
+        <div style="display:flex;align-items:center;color:#8B45D6;font-size:20px;font-weight:700;">&#x25B6;</div>
+        <div style="flex:1;background:#fff;border-radius:12px;padding:18px 16px;text-align:center;">
+          <div style="font-size:14px;font-weight:700;color:#1a1a2e;">Klydo Commerce Backend</div>
+          <div style="font-size:12px;color:rgba(0,0,0,.4);margin-top:4px;">Catalog, orders, fulfillment, payments</div>
+        </div>
+        <div style="display:flex;align-items:center;color:#00D4DC;font-size:20px;font-weight:700;">&#x25B6;</div>
+        <div style="flex:1;background:#fff;border-radius:12px;padding:18px 16px;text-align:center;">
+          <div style="font-size:14px;font-weight:700;color:#1a1a2e;">Klydo AI</div>
+          <div style="font-size:12px;color:rgba(0,0,0,.4);margin-top:4px;">Discovery, recommendations, personalization</div>
         </div>
       </div>
+    </div>
+    <div style="width:2px;height:16px;background:linear-gradient(180deg,#FF2D8A,#8B45D6);"></div>
+    <div style="font-size:12px;font-weight:600;color:#8B45D6;padding:4px 16px;background:rgba(139,69,214,.08);border-radius:8px;">Secure API</div>
+    <div style="width:2px;height:16px;background:linear-gradient(180deg,#8B45D6,#00D4DC);"></div>
+    <div style="color:#8B45D6;font-size:16px;font-weight:700;">&#x25BC;</div>
+    <!-- Fynd Platform -->
+    <div style="background:rgba(139,69,214,.06);border-radius:16px;padding:18px 32px;text-align:center;margin-bottom:12px;">
+      <div style="font-size:15px;font-weight:700;color:#1a1a2e;">Fynd Platform</div>
+      <div style="font-size:12px;color:rgba(0,0,0,.4);margin-top:2px;">OMS + WMS + TMS</div>
+    </div>
+    <div style="width:2px;height:12px;background:rgba(0,0,0,.1);"></div>
+    <div style="color:rgba(0,0,0,.2);font-size:16px;font-weight:700;">&#x25BC;</div>
+    <!-- 3 Services -->
+    <div style="display:flex;gap:12px;width:100%;max-width:700px;">
+      <div class="stat-card pink" style="flex:1;"><span class="icon">🏬</span><div class="val" style="font-size:18px;">Dark Store</div><div class="lbl">Fulfillment</div></div>
+      <div class="stat-card purple" style="flex:1;"><span class="icon">🚀</span><div class="val" style="font-size:18px;">Last-Mile</div><div class="lbl">Delivery</div></div>
+      <div class="stat-card cyan" style="flex:1;"><span class="icon">🔄</span><div class="val" style="font-size:18px;">Reverse</div><div class="lbl">Logistics</div></div>
+    </div>
+  </div>
+
+  <!-- Order Placement + Returns Flows -->
+  <div class="card-grid g2" style="gap:24px;">
+    <!-- Order Placement Flow -->
+    <div>
+      <div class="section-eyebrow"><div class="eyebrow-text">Order Placement Flow</div><div class="eyebrow-line"></div></div>
+      <div style="display:flex;flex-direction:column;gap:8px;">
+        <div class="check-item" style="background:rgba(255,45,138,.05);"><div style="width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#FF2D8A,#8B45D6);font-size:11px;font-weight:700;color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</div><p style="font-size:13px;color:rgba(0,0,0,.55);"><strong>Browse &amp; Discover</strong> — H&amp;M customer opens HM NOW tab, sees quick-delivery eligible H&amp;M catalog with AI-powered recommendations <span class="tag" style="font-size:10px;padding:3px 10px;margin-left:6px;">H&amp;M UI + Klydo AI</span></p></div>
+        <div class="check-item"><div style="width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#FF2D8A,#8B45D6);font-size:11px;font-weight:700;color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</div><p style="font-size:13px;color:rgba(0,0,0,.55);"><strong>Serviceability Check</strong> — Real-time pincode validation — is 15-min delivery available at this customer's location? <span class="tag purple" style="font-size:10px;padding:3px 10px;margin-left:6px;">Klydo Commerce Backend</span></p></div>
+        <div class="check-item" style="background:rgba(255,45,138,.05);"><div style="width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#FF2D8A,#8B45D6);font-size:11px;font-weight:700;color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;">3</div><p style="font-size:13px;color:rgba(0,0,0,.55);"><strong>Cart &amp; Checkout</strong> — Customer places order within H&amp;M's native checkout experience <span class="tag" style="font-size:10px;padding:3px 10px;margin-left:6px;">H&amp;M UI + Klydo Commerce Backend</span></p></div>
+        <div class="check-item"><div style="width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#FF2D8A,#8B45D6);font-size:11px;font-weight:700;color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;">4</div><p style="font-size:13px;color:rgba(0,0,0,.55);"><strong>Payment Processing</strong> — Payment captured via H&amp;M's existing payment gateway <span class="tag dark" style="font-size:10px;padding:3px 10px;margin-left:6px;">H&amp;M's Payment Infra</span></p></div>
+        <div class="check-item" style="background:rgba(255,45,138,.05);"><div style="width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#FF2D8A,#8B45D6);font-size:11px;font-weight:700;color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;">5</div><p style="font-size:13px;color:rgba(0,0,0,.55);"><strong>Warehouse Assignment</strong> — Klydo assigns nearest dark store stocking H&amp;M inventory, reserves units <span class="tag purple" style="font-size:10px;padding:3px 10px;margin-left:6px;">Klydo Commerce Backend → Fynd WMS</span></p></div>
+        <div class="check-item"><div style="width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#FF2D8A,#8B45D6);font-size:11px;font-weight:700;color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;">6</div><p style="font-size:13px;color:rgba(0,0,0,.55);"><strong>Dispatch &amp; Delivery</strong> — Picker packs H&amp;M order, rider dispatched, customer sees live tracking <span class="tag cyan" style="font-size:10px;padding:3px 10px;margin-left:6px;">Fynd TMS + Last-Mile Partner</span></p></div>
+        <div class="check-item" style="background:rgba(255,45,138,.05);"><div style="width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#FF2D8A,#8B45D6);font-size:11px;font-weight:700;color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;">7</div><p style="font-size:13px;color:rgba(0,0,0,.55);"><strong>Delivered</strong> — Customer receives H&amp;M order in 15–60 mins <span class="tag dark" style="font-size:10px;padding:3px 10px;margin-left:6px;">Last-Mile Partner</span></p></div>
+      </div>
+    </div>
+    <!-- Returns Flow -->
+    <div>
+      <div class="section-eyebrow"><div class="eyebrow-text">Returns Flow</div><div class="eyebrow-line"></div></div>
+      <div style="display:flex;flex-direction:column;gap:8px;">
+        <div class="check-item" style="background:rgba(139,69,214,.05);"><div style="width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#8B45D6,#FF2D8A);font-size:11px;font-weight:700;color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</div><p style="font-size:13px;color:rgba(0,0,0,.55);"><strong>Initiate Return</strong> — Customer requests return from H&amp;M's app — same UX as regular H&amp;M returns <span class="tag" style="font-size:10px;padding:3px 10px;margin-left:6px;">H&amp;M UI → Klydo Commerce Backend</span></p></div>
+        <div class="check-item"><div style="width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#8B45D6,#FF2D8A);font-size:11px;font-weight:700;color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</div><p style="font-size:13px;color:rgba(0,0,0,.55);"><strong>Eligibility Check</strong> — Auto-validated against H&amp;M's return policy (time window, category rules) <span class="tag purple" style="font-size:10px;padding:3px 10px;margin-left:6px;">Klydo Commerce Backend</span></p></div>
+        <div class="check-item" style="background:rgba(139,69,214,.05);"><div style="width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#8B45D6,#FF2D8A);font-size:11px;font-weight:700;color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;">3</div><p style="font-size:13px;color:rgba(0,0,0,.55);"><strong>Auto-Approve</strong> — Return approved instantly, reverse shipment created <span class="tag purple" style="font-size:10px;padding:3px 10px;margin-left:6px;">Klydo Commerce Backend → Fynd TMS</span></p></div>
+        <div class="check-item"><div style="width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#8B45D6,#FF2D8A);font-size:11px;font-weight:700;color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;">4</div><p style="font-size:13px;color:rgba(0,0,0,.55);"><strong>Pickup Scheduled</strong> — Rider picks up from customer's location <span class="tag dark" style="font-size:10px;padding:3px 10px;margin-left:6px;">Last-Mile Partner</span></p></div>
+        <div class="check-item" style="background:rgba(139,69,214,.05);"><div style="width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#8B45D6,#FF2D8A);font-size:11px;font-weight:700;color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;">5</div><p style="font-size:13px;color:rgba(0,0,0,.55);"><strong>QC &amp; Restock</strong> — Item received at dark store, quality checked, restocked if eligible <span class="tag cyan" style="font-size:10px;padding:3px 10px;margin-left:6px;">Dark Store Ops</span></p></div>
+        <div class="check-item"><div style="width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#8B45D6,#FF2D8A);font-size:11px;font-weight:700;color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;">6</div><p style="font-size:13px;color:rgba(0,0,0,.55);"><strong>Refund Processed</strong> — Refund initiated to customer's original payment method <span class="tag" style="font-size:10px;padding:3px 10px;margin-left:6px;">Klydo Commerce Backend → H&amp;M's PSP</span></p></div>
+      </div>
+      <div class="highlight" style="margin-top:16px;margin-bottom:0;">
+        <p style="font-size:15px;"><strong>Fully automated</strong> return loop. No manual intervention. Average resolution: <strong>&lt; 48 hours</strong>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 12: USER JOURNEY -->
+<section class="slide s12" id="journey">
+  <div class="slide-label">User Experience</div>
+  <div class="slide-title">From Opening HM NOW to <span>Doorbell in 15 Minutes</span></div>
+  <div class="divider"></div>
+
+  <!-- 5-Step Journey Flow -->
+  <div style="display:flex;align-items:flex-start;gap:0;justify-content:center;margin-bottom:32px;flex-wrap:nowrap;overflow-x:auto;padding:8px 0;">
+    <div style="display:flex;flex-direction:column;align-items:center;text-align:center;min-width:140px;">
+      <div style="width:64px;height:64px;border-radius:16px;background:rgba(255,45,138,.1);display:flex;align-items:center;justify-content:center;font-size:28px;margin-bottom:10px;">📱</div>
+      <div style="font-size:14px;font-weight:700;color:#1a1a2e;">Open HM NOW</div>
+      <div style="font-size:12px;color:rgba(0,0,0,.35);margin-top:2px;">Tab</div>
+    </div>
+    <div style="display:flex;align-items:center;padding-top:20px;color:#FF2D8A;font-size:20px;font-weight:700;margin:0 6px;">&#x25B6;</div>
+    <div style="display:flex;flex-direction:column;align-items:center;text-align:center;min-width:140px;">
+      <div style="width:64px;height:64px;border-radius:16px;background:rgba(139,69,214,.1);display:flex;align-items:center;justify-content:center;font-size:28px;margin-bottom:10px;">🔍</div>
+      <div style="font-size:14px;font-weight:700;color:#1a1a2e;">Browse H&amp;M</div>
+      <div style="font-size:12px;color:rgba(0,0,0,.35);margin-top:2px;">Catalog</div>
+      <div style="font-size:11px;color:#8B45D6;margin-top:6px;max-width:130px;line-height:1.4;">AI-powered discovery + Bangalore location-aware availability</div>
+    </div>
+    <div style="display:flex;align-items:center;padding-top:20px;color:#8B45D6;font-size:20px;font-weight:700;margin:0 6px;">&#x25B6;</div>
+    <div style="display:flex;flex-direction:column;align-items:center;text-align:center;min-width:140px;">
+      <div style="width:64px;height:64px;border-radius:16px;background:rgba(0,212,220,.1);display:flex;align-items:center;justify-content:center;font-size:28px;margin-bottom:10px;">🛒</div>
+      <div style="font-size:14px;font-weight:700;color:#1a1a2e;">Add to Cart</div>
+      <div style="font-size:12px;color:rgba(0,0,0,.35);margin-top:2px;">&nbsp;</div>
+    </div>
+    <div style="display:flex;align-items:center;padding-top:20px;color:#00D4DC;font-size:20px;font-weight:700;margin:0 6px;">&#x25B6;</div>
+    <div style="display:flex;flex-direction:column;align-items:center;text-align:center;min-width:140px;">
+      <div style="width:64px;height:64px;border-radius:16px;background:rgba(255,45,138,.1);display:flex;align-items:center;justify-content:center;font-size:28px;margin-bottom:10px;">💳</div>
+      <div style="font-size:14px;font-weight:700;color:#1a1a2e;">Pay</div>
+      <div style="font-size:12px;color:rgba(0,0,0,.35);margin-top:2px;">H&amp;M's gateway</div>
+    </div>
+    <div style="display:flex;align-items:center;padding-top:20px;color:#FF2D8A;font-size:20px;font-weight:700;margin:0 6px;">&#x25B6;</div>
+    <div style="display:flex;flex-direction:column;align-items:center;text-align:center;min-width:140px;">
+      <div style="width:64px;height:64px;border-radius:16px;background:linear-gradient(135deg,rgba(255,45,138,.15),rgba(139,69,214,.15));display:flex;align-items:center;justify-content:center;font-size:28px;margin-bottom:10px;">📍</div>
+      <div style="font-size:14px;font-weight:700;color:#1a1a2e;">Track Live</div>
+      <div style="font-size:12px;color:rgba(0,0,0,.35);margin-top:2px;">Delivery</div>
+      <div style="font-size:11px;color:#FF2D8A;margin-top:6px;max-width:130px;line-height:1.4;">Real-time rider tracking on map</div>
+    </div>
+  </div>
+
+  <div class="highlight" style="margin-bottom:32px;">
+    <p><strong>What H&amp;M's customer never sees:</strong> Klydo. The entire experience feels <strong>native to H&amp;M</strong>.</p>
+  </div>
+
+  <!-- H&M Today vs H&M with HM NOW -->
+  <div class="section-eyebrow"><div class="eyebrow-text">What HM NOW Unlocks for H&amp;M</div><div class="eyebrow-line"></div></div>
+  <div style="display:flex;gap:12px;margin-bottom:8px;">
+    <div style="flex:1;font-size:13px;font-weight:700;color:rgba(0,0,0,.35);text-align:center;padding:8px 0;">H&amp;M Today</div>
+    <div style="flex:1;font-size:13px;font-weight:700;color:#FF2D8A;text-align:center;padding:8px 0;">H&amp;M with HM NOW</div>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:8px;">
+    <div style="display:flex;gap:12px;">
+      <div class="card" style="flex:1;background:rgba(0,0,0,.03);padding:16px 20px;"><p style="font-size:14px;color:rgba(0,0,0,.45);">3–7 day delivery via standard e-com</p></div>
+      <div class="card" style="flex:1;background:rgba(255,45,138,.06);padding:16px 20px;"><p style="font-size:14px;color:#1a1a2e;"><strong>15 min – same day delivery</strong> in Bangalore</p></div>
+    </div>
+    <div style="display:flex;gap:12px;">
+      <div class="card" style="flex:1;background:rgba(0,0,0,.03);padding:16px 20px;"><p style="font-size:14px;color:rgba(0,0,0,.45);">Loses impulse buyers to Myntra/Ajio</p></div>
+      <div class="card" style="flex:1;background:rgba(139,69,214,.06);padding:16px 20px;"><p style="font-size:14px;color:#1a1a2e;"><strong>Captures impulse demand</strong> instantly</p></div>
+    </div>
+    <div style="display:flex;gap:12px;">
+      <div class="card" style="flex:1;background:rgba(0,0,0,.03);padding:16px 20px;"><p style="font-size:14px;color:rgba(0,0,0,.45);">High cart abandonment on slow delivery</p></div>
+      <div class="card" style="flex:1;background:rgba(255,45,138,.06);padding:16px 20px;"><p style="font-size:14px;color:#1a1a2e;"><strong>50%+ cart conversion</strong> (proven at Klydo)</p></div>
+    </div>
+    <div style="display:flex;gap:12px;">
+      <div class="card" style="flex:1;background:rgba(0,0,0,.03);padding:16px 20px;"><p style="font-size:14px;color:rgba(0,0,0,.45);">No dark store operations capability</p></div>
+      <div class="card" style="flex:1;background:rgba(139,69,214,.06);padding:16px 20px;"><p style="font-size:14px;color:#1a1a2e;"><strong>Fully managed dark store fulfillment</strong> by Klydo</p></div>
+    </div>
+    <div style="display:flex;gap:12px;">
+      <div class="card" style="flex:1;background:rgba(0,0,0,.03);padding:16px 20px;"><p style="font-size:14px;color:rgba(0,0,0,.45);">Building q-com in-house: 12–18 months</p></div>
+      <div class="card" style="flex:1;background:rgba(0,212,220,.06);padding:16px 20px;"><p style="font-size:14px;color:#1a1a2e;"><strong>HM NOW go-live: 8–10 weeks</strong></p></div>
+    </div>
+    <div style="display:flex;gap:12px;">
+      <div class="card" style="flex:1;background:rgba(0,0,0,.03);padding:16px 20px;"><p style="font-size:14px;color:rgba(0,0,0,.45);">Competing with Slikk, Myntra minutes</p></div>
+      <div class="card" style="flex:1;background:linear-gradient(135deg,rgba(255,45,138,.08),rgba(139,69,214,.08));padding:16px 20px;"><p style="font-size:14px;color:#1a1a2e;"><strong>First-mover</strong> in branded fashion q-com</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 13: SECURITY & DATA ARCHITECTURE -->
+<section class="slide s13" id="security">
+  <div class="slide-label">Security</div>
+  <div class="slide-title">H&amp;M's Data Stays with <span>H&amp;M</span></div>
+  <div class="divider"></div>
+
+  <!-- Deployment Model Diagram -->
+  <div style="display:flex;flex-direction:column;align-items:center;gap:0;margin-bottom:36px;">
+    <!-- H&M Cloud -->
+    <div style="background:rgba(255,45,138,.04);border-radius:16px;padding:28px 32px;width:100%;max-width:780px;position:relative;">
+      <div style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#FF2D8A;margin-bottom:16px;">H&amp;M's Cloud (AWS / GCP / Azure)</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;">
+        <div style="background:#fff;border-radius:12px;padding:16px;text-align:center;">
+          <div style="font-size:14px;font-weight:700;color:#1a1a2e;">Klydo Commerce Backend</div>
+          <div style="font-size:12px;color:rgba(0,0,0,.4);margin-top:4px;">Containerized · Orders, catalog, fulfillment</div>
+        </div>
+        <div style="background:#fff;border-radius:12px;padding:16px;text-align:center;">
+          <div style="font-size:14px;font-weight:700;color:#1a1a2e;">Klydo AI</div>
+          <div style="font-size:12px;color:rgba(0,0,0,.4);margin-top:4px;">Containerized · Discovery, recommendations</div>
+        </div>
+        <div style="background:#fff;border-radius:12px;padding:16px;text-align:center;">
+          <div style="font-size:14px;font-weight:700;color:#1a1a2e;">H&amp;M's Database</div>
+          <div style="font-size:12px;color:rgba(0,0,0,.4);margin-top:4px;">PostgreSQL — dedicated · H&amp;M owns all data</div>
+        </div>
+        <div style="background:#fff;border-radius:12px;padding:16px;text-align:center;">
+          <div style="font-size:14px;font-weight:700;color:#1a1a2e;">Redis Cache</div>
+          <div style="font-size:12px;color:rgba(0,0,0,.4);margin-top:4px;">Session, catalog</div>
+        </div>
+        <div style="background:#fff;border-radius:12px;padding:16px;text-align:center;grid-column:span 1;">
+          <div style="font-size:14px;font-weight:700;color:#1a1a2e;">Object Storage (S3/GCS)</div>
+          <div style="font-size:12px;color:rgba(0,0,0,.4);margin-top:4px;">Media, invoices</div>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:20px;margin:8px 0;">
+      <div style="display:flex;flex-direction:column;align-items:center;">
+        <div style="width:2px;height:14px;background:linear-gradient(180deg,#FF2D8A,#8B45D6);"></div>
+        <div style="font-size:11px;font-weight:600;color:#8B45D6;padding:4px 14px;background:rgba(139,69,214,.08);border-radius:8px;">Encrypted API (TLS 1.3)</div>
+        <div style="width:2px;height:14px;background:linear-gradient(180deg,#8B45D6,#00D4DC);"></div>
+      </div>
+      <div style="font-size:12px;font-weight:700;color:#FF2D8A;background:rgba(255,45,138,.08);padding:8px 16px;border-radius:10px;max-width:200px;text-align:center;line-height:1.4;">No H&amp;M customer PII leaves H&amp;M's cloud</div>
+    </div>
+    <!-- Fynd -->
+    <div style="background:rgba(139,69,214,.06);border-radius:16px;padding:16px 28px;text-align:center;">
+      <div style="font-size:15px;font-weight:700;color:#1a1a2e;">Fynd Platform</div>
+      <div style="font-size:12px;color:rgba(0,0,0,.4);margin-top:2px;">Only order + inventory data (no customer PII)</div>
+    </div>
+  </div>
+
+  <!-- Security Guarantees -->
+  <div class="section-eyebrow"><div class="eyebrow-text">Security Guarantees for H&amp;M</div><div class="eyebrow-line"></div></div>
+  <div class="card-grid g2" style="gap:10px;margin-bottom:32px;">
+    <div class="check-item" style="background:rgba(255,45,138,.04);"><div class="check-icon">🔒</div><p style="font-size:13px;"><strong>Data Residency</strong> — All H&amp;M customer data (PII, payment, orders) lives in H&amp;M's cloud account. Klydo has zero access to production data outside deployment windows.</p></div>
+    <div class="check-item" style="background:rgba(139,69,214,.04);"><div class="check-icon">📦</div><p style="font-size:13px;"><strong>Code Isolation</strong> — Klydo Commerce Backend and Klydo AI run as isolated containers (Kubernetes) within H&amp;M's infrastructure. No shared compute with Klydo's own platform or any other brand.</p></div>
+    <div class="check-item" style="background:rgba(0,212,220,.04);"><div class="check-icon">🌐</div><p style="font-size:13px;"><strong>Network Security</strong> — All external communication over TLS 1.3. Internal services communicate within H&amp;M's VPC. No public endpoints except H&amp;M's own load balancer.</p></div>
+    <div class="check-item" style="background:rgba(255,45,138,.04);"><div class="check-icon">🛡</div><p style="font-size:13px;"><strong>PII Boundary</strong> — H&amp;M customer PII never leaves H&amp;M's cloud. Only fulfillment data (SKU, quantity, dark store address) is sent to Fynd for dispatch.</p></div>
+    <div class="check-item" style="background:rgba(139,69,214,.04);"><div class="check-icon">💳</div><p style="font-size:13px;"><strong>Payment Security</strong> — Klydo never touches card data. Payments flow through H&amp;M's existing PCI-DSS compliant gateway. Klydo only receives payment confirmation tokens.</p></div>
+    <div class="check-item" style="background:rgba(0,212,220,.04);"><div class="check-icon">🔑</div><p style="font-size:13px;"><strong>Access Control</strong> — Klydo engineers get time-boxed, audited access for deployments only. No standing access to H&amp;M's infra. All access governed by H&amp;M's IAM policies.</p></div>
+    <div class="check-item" style="background:rgba(255,45,138,.04);"><div class="check-icon">📋</div><p style="font-size:13px;"><strong>Audit Trail</strong> — Every order, payment, refund, and inventory change is logged with immutable audit trails in H&amp;M's database. Fully auditable by H&amp;M's compliance team.</p></div>
+    <div class="check-item" style="background:rgba(139,69,214,.04);"><div class="check-icon">🔄</div><p style="font-size:13px;"><strong>Software Updates</strong> — All updates delivered via Kubernetes rolling deployments within H&amp;M's cloud. Zero downtime, no manual intervention. H&amp;M retains full visibility and approval control over deployments.</p></div>
+  </div>
+
+  <!-- Fynd Data Boundary -->
+  <div class="section-eyebrow"><div class="eyebrow-text">What Fynd Sees vs What It Doesn't</div><div class="eyebrow-line"></div></div>
+  <div class="card-grid g2" style="gap:16px;">
+    <div>
+      <div style="font-size:13px;font-weight:700;color:#00B4BC;margin-bottom:10px;text-align:center;">Fynd Receives</div>
+      <div style="display:flex;flex-direction:column;gap:6px;">
+        <div class="card" style="background:rgba(0,212,220,.06);padding:14px 18px;text-align:center;"><p style="font-size:14px;color:#1a1a2e;">H&amp;M SKU IDs, quantities</p></div>
+        <div class="card" style="background:rgba(0,212,220,.06);padding:14px 18px;text-align:center;"><p style="font-size:14px;color:#1a1a2e;">Dark store location</p></div>
+        <div class="card" style="background:rgba(0,212,220,.06);padding:14px 18px;text-align:center;"><p style="font-size:14px;color:#1a1a2e;">Delivery pincode</p></div>
+        <div class="card" style="background:rgba(0,212,220,.06);padding:14px 18px;text-align:center;"><p style="font-size:14px;color:#1a1a2e;">Order status updates</p></div>
+      </div>
+    </div>
+    <div>
+      <div style="font-size:13px;font-weight:700;color:#FF2D8A;margin-bottom:10px;text-align:center;">Fynd Never Sees</div>
+      <div style="display:flex;flex-direction:column;gap:6px;">
+        <div class="card" style="background:rgba(255,45,138,.05);padding:14px 18px;text-align:center;"><p style="font-size:14px;color:rgba(0,0,0,.5);">H&amp;M customer name, email, phone</p></div>
+        <div class="card" style="background:rgba(255,45,138,.05);padding:14px 18px;text-align:center;"><p style="font-size:14px;color:rgba(0,0,0,.5);">Payment details</p></div>
+        <div class="card" style="background:rgba(255,45,138,.05);padding:14px 18px;text-align:center;"><p style="font-size:14px;color:rgba(0,0,0,.5);">H&amp;M customer browsing history</p></div>
+        <div class="card" style="background:rgba(255,45,138,.05);padding:14px 18px;text-align:center;"><p style="font-size:14px;color:rgba(0,0,0,.5);">H&amp;M's pricing or discount strategy</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 14: THE ASK -->
+<section class="slide s14" id="move-now">
+  <div class="slide-label">The Ask</div>
+  <div class="slide-title">Ready to Launch <span>HM NOW</span></div>
+  <div class="divider"></div>
+
+  <!-- What H&M Needs to Provide -->
+  <div class="section-eyebrow"><div class="eyebrow-text">What H&amp;M Needs to Provide</div><div class="eyebrow-line"></div></div>
+  <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:24px;">
+    <div class="check-item" style="background:rgba(139,69,214,.06);"><div class="check-icon" style="background:linear-gradient(135deg,#8B45D6,#FF2D8A);">→</div><p style="font-size:14px;"><strong>Load balancer routing for HM NOW tab</strong> <span style="color:rgba(0,0,0,.4);margin-left:4px;">— Traffic routing to Klydo-powered UI</span></p></div>
+    <div class="check-item" style="background:rgba(139,69,214,.06);"><div class="check-icon" style="background:linear-gradient(135deg,#8B45D6,#FF2D8A);">→</div><p style="font-size:14px;"><strong>Mobile codebase access (or webview slot)</strong> <span style="color:rgba(0,0,0,.4);margin-left:4px;">— Embed HM NOW experience natively</span></p></div>
+    <div class="check-item" style="background:rgba(139,69,214,.06);"><div class="check-icon" style="background:linear-gradient(135deg,#8B45D6,#FF2D8A);">→</div><p style="font-size:14px;"><strong>Cloud account / namespace</strong> <span style="color:rgba(0,0,0,.4);margin-left:4px;">— Deploy Klydo backend in H&amp;M's infra</span></p></div>
+    <div class="check-item" style="background:rgba(139,69,214,.06);"><div class="check-icon" style="background:linear-gradient(135deg,#8B45D6,#FF2D8A);">→</div><p style="font-size:14px;"><strong>H&amp;M catalog feed (SKU, pricing, media)</strong> <span style="color:rgba(0,0,0,.4);margin-left:4px;">— Populate HM NOW catalog</span></p></div>
+    <div class="check-item" style="background:rgba(139,69,214,.06);"><div class="check-icon" style="background:linear-gradient(135deg,#8B45D6,#FF2D8A);">→</div><p style="font-size:14px;"><strong>Payment gateway credentials</strong> <span style="color:rgba(0,0,0,.4);margin-left:4px;">— Process payments through H&amp;M's PSP</span></p></div>
+  </div>
+
+  <div class="highlight" style="margin-bottom:32px;">
+    <p><strong>Everything else</strong> — backend, AI, fulfillment ops, dark store management, logistics — <strong>is Klydo.</strong></p>
+  </div>
+
+  <!-- SLAs -->
+  <div class="section-eyebrow"><div class="eyebrow-text">Service Level Commitments</div><div class="eyebrow-line"></div></div>
+  <div class="card-grid g2" style="gap:10px;margin-bottom:32px;">
+    <div class="stat-card pink"><span class="icon">⏱</span><div class="val">99.5%</div><div class="lbl">Platform uptime (monthly)</div></div>
+    <div class="stat-card purple"><span class="icon">🚚</span><div class="val">95%+</div><div class="lbl">Orders delivered within promised window</div></div>
+    <div class="stat-card cyan"><span class="icon">🔄</span><div class="val">&lt; 48 hrs</div><div class="lbl">Return-to-refund resolution</div></div>
+    <div class="stat-card pink"><span class="icon">📊</span><div class="val">Daily</div><div class="lbl">Operations &amp; performance reporting to H&amp;M</div></div>
+    <div class="stat-card purple"><span class="icon">🛡</span><div class="val">&lt; 4 hrs</div><div class="lbl">Critical incident response time</div></div>
+    <div class="stat-card cyan"><span class="icon">🔧</span><div class="val">Zero</div><div class="lbl">Downtime deployments (K8s rolling updates)</div></div>
+  </div>
+
+  <!-- Why H&M Should Move Now -->
+  <div class="section-eyebrow"><div class="eyebrow-text">Why H&amp;M Should Move Now</div><div class="eyebrow-line"></div></div>
+  <div style="display:flex;flex-direction:column;gap:10px;">
+    <div class="card" style="background:rgba(255,45,138,.06);padding:20px 24px;">
+      <h3 style="display:flex;align-items:center;gap:10px;"><span style="font-size:20px;">🏆</span> First-Mover Advantage</h3>
+      <p style="margin-top:6px;">No fashion brand in India has branded quick-commerce today. H&amp;M can own this category.</p>
+    </div>
+    <div class="card" style="background:rgba(139,69,214,.06);padding:20px 24px;">
+      <h3 style="display:flex;align-items:center;gap:10px;"><span style="font-size:20px;">⚡</span> Battle-Tested</h3>
+      <p style="margin-top:6px;">Klydo is already live, processing orders at scale — <strong style="color:#FF2D8A;">45% WoW growth</strong>, <strong style="color:#8B45D6;">NPS 72</strong>, <strong style="color:#00B4BC;">50%+ cart conversion</strong>.</p>
+    </div>
+    <div class="card" style="background:rgba(0,212,220,.06);padding:20px 24px;">
+      <h3 style="display:flex;align-items:center;gap:10px;"><span style="font-size:20px;">🚀</span> Zero Build Risk</h3>
+      <p style="margin-top:6px;">This is not a POC. It's production-grade infrastructure deployed in <strong>8–10 weeks</strong>.</p>
+    </div>
+    <div class="card" style="background:rgba(255,45,138,.06);padding:20px 24px;">
+      <h3 style="display:flex;align-items:center;gap:10px;"><span style="font-size:20px;">🔒</span> Zero Data Risk</h3>
+      <p style="margin-top:6px;">H&amp;M's customer data never leaves H&amp;M's cloud. Klydo is plumbing, not a platform.</p>
+    </div>
+    <div class="card" style="background:rgba(139,69,214,.06);padding:20px 24px;">
+      <h3 style="display:flex;align-items:center;gap:10px;"><span style="font-size:20px;">🏬</span> Shared Economics</h3>
+      <p style="margin-top:6px;">Klydo's dark store network is already operational in Bangalore. H&amp;M gets instant access without building a single warehouse.</p>
     </div>
   </div>
 </section>
 
 <script>
   window.addEventListener('scroll', () => {
-    const ids = ['why','pmf','team','growth','scale','brands','hm'];
+    const ids = ['why','pmf','team','growth','scale','brands','hm','arch','journey','security','move-now'];
     const pills = document.querySelectorAll('.nav-pill');
     let cur = -1;
     ids.forEach((id,i)=>{const el=document.getElementById(id);if(el&&window.scrollY>=el.offsetTop-200)cur=i+1;});
