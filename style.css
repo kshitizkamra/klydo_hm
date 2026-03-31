@@ -56,6 +56,10 @@ nav{
 .s8::before{background:#8B45D6;bottom:-200px;right:-200px;}
 .s9::before{background:#00D4DC;top:-100px;right:-100px;}
 .s10::before{background:#FF2D8A;bottom:-100px;left:-100px;}
+.s11::before{background:#8B45D6;top:-200px;right:-150px;}
+.s12::before{background:#00D4DC;bottom:-200px;left:-200px;}
+.s13::before{background:#FF2D8A;top:-100px;left:-100px;}
+.s14::before{background:#8B45D6;bottom:-100px;right:-100px;}
 
 /* ── Hero ─────────────────────────────────────────── */
 .hero{text-align:center;display:flex;flex-direction:column;align-items:center;gap:24px;}
