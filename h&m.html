@@ -12,18 +12,18 @@
   <div class="nav-logo"><img src="klydo-logo.png" alt="Klydo" style="height:32px;width:auto;object-fit:contain;vertical-align:middle;"/></div>
   <div class="nav-pills">
     <button class="nav-pill active" onclick="scrollTo(0,0)">Overview</button>
+    <button class="nav-pill" onclick="document.getElementById('hm').scrollIntoView({behavior:'smooth'})">H&M NOW</button>
+    <button class="nav-pill" onclick="document.getElementById('arch').scrollIntoView({behavior:'smooth'})">Architecture</button>
+    <button class="nav-pill" onclick="document.getElementById('security').scrollIntoView({behavior:'smooth'})">Security</button>
+    <button class="nav-pill" onclick="document.getElementById('commercial').scrollIntoView({behavior:'smooth'})">Commercial</button>
     <button class="nav-pill" onclick="document.getElementById('why').scrollIntoView({behavior:'smooth'})">Why Now</button>
     <button class="nav-pill" onclick="document.getElementById('pmf').scrollIntoView({behavior:'smooth'})">PMF</button>
     <button class="nav-pill" onclick="document.getElementById('team').scrollIntoView({behavior:'smooth'})">Team</button>
     <button class="nav-pill" onclick="document.getElementById('growth').scrollIntoView({behavior:'smooth'})">Growth</button>
     <button class="nav-pill" onclick="document.getElementById('scale').scrollIntoView({behavior:'smooth'})">Scale</button>
     <button class="nav-pill" onclick="document.getElementById('brands').scrollIntoView({behavior:'smooth'})">Brands</button>
-    <button class="nav-pill" onclick="document.getElementById('hm').scrollIntoView({behavior:'smooth'})">H&M NOW</button>
-    <button class="nav-pill" onclick="document.getElementById('arch').scrollIntoView({behavior:'smooth'})">Architecture</button>
-    <button class="nav-pill" onclick="document.getElementById('security').scrollIntoView({behavior:'smooth'})">Security</button>
   </div>
 </nav>
-
 <!-- SLIDE 1: HERO -->
 <section class="slide s1" style="justify-content:center;align-items:center;">
   <div class="hero">
@@ -37,283 +37,6 @@
     </div>
   </div>
   <div class="scroll-hint">Scroll to explore<em class="scroll-chevron">&#x276F;</em></div>
-</section>
-
-<!-- SLIDE 2: WHY NOW -->
-<section class="slide s2" id="why">
-  <div class="slide-label">Market Thesis</div>
-  <div class="slide-title">Why Now? Market Expanding <span>through Frequency</span></div>
-  <div class="divider"></div>
-  <div style="max-width:800px;">
-    <div class="highlight">
-      <p><strong>Desire</strong> for shopping has always existed. Speed does not create demand.</p>
-    </div>
-    <div style="display:flex;flex-direction:column;gap:16px;margin:8px 0 32px;">
-      <div class="card" style="background:rgba(255,45,138,.07);">
-        <div style="display:flex;gap:12px;align-items:flex-start;">
-          <span class="tag" style="flex-shrink:0;margin-top:2px;">Step 1</span>
-          <p style="font-size:15px;color:rgba(0,0,0,.6);">Shopping desire exists latently — some realized, some unrealized / forgotten</p>
-        </div>
-      </div>
-      <div style="text-align:center;color:#8B45D6;font-size:24px;transform:rotate(90deg);">&#x276F;</div>
-      <div class="card" style="background:rgba(139,69,214,.07);">
-        <div style="display:flex;gap:12px;align-items:flex-start;">
-          <span class="tag purple" style="flex-shrink:0;margin-top:2px;">Step 2</span>
-          <p style="font-size:15px;color:rgba(0,0,0,.6);">Speed converts <strong style="color:#8B45D6;">latent desire</strong> into <strong style="color:#FF2D8A;">realized demand</strong> — the cost of acting on desire has collapsed <em style="color:rgba(0,0,0,.35);font-size:13px;">(reduced time to product)</em></p>
-        </div>
-      </div>
-      <div style="text-align:center;color:#FF2D8A;font-size:24px;transform:rotate(90deg);">&#x276F;</div>
-      <div class="card" style="background:rgba(0,212,220,.07);">
-        <div style="display:flex;gap:12px;align-items:flex-start;">
-          <span class="tag cyan" style="flex-shrink:0;margin-top:2px;">Outcome</span>
-          <p style="font-size:15px;color:#1a1a2e;"><strong style="color:#FF2D8A;">More shopping moments per user</strong> become monetizable</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SLIDE 3: PMF -->
-<section class="slide s3" id="pmf">
-  <div class="slide-label">Product Market Fit</div>
-  <div class="slide-title">10X Assortment + 10X Experience <span>→ PMF</span></div>
-  <div class="divider"></div>
-  <div class="card-grid g2" style="margin-bottom:24px;">
-    <div>
-      <div class="section-eyebrow"><div class="eyebrow-text">Demand + Discovery</div><div class="eyebrow-line"></div></div>
-      <div class="card-grid" style="grid-template-columns:1fr 1fr;gap:12px;">
-        <div class="stat-card pink"><span class="icon">⏱</span><div class="val">30+ min</div><div class="lbl">Time spent/week per registered user for 10+ weeks</div></div>
-        <div class="stat-card purple"><span class="icon">🔁</span><div class="val">2X</div><div class="lbl">Retention for buyers who shop through feed</div></div>
-        <div class="stat-card cyan"><span class="icon">🛍</span><div class="val">25%</div><div class="lbl">Orders with products added via collections</div></div>
-        <div class="stat-card pink"><span class="icon">📊</span><div class="val">40/80</div><div class="lbl">Pareto — industry leading brand contribution</div></div>
-        <div class="stat-card purple"><span class="icon">✨</span><div class="val">35%</div><div class="lbl">Selection exclusive from Slikk and Myntra</div></div>
-        <div class="stat-card cyan"><span class="icon">👀</span><div class="val">30+</div><div class="lbl">Products viewed before purchase</div></div>
-        <div class="stat-card pink" style="grid-column:span 2;"><span class="icon">📦</span><div class="val">45 DOH</div><div class="lbl">Days of holding keeps selection perpetually fresh</div></div>
-      </div>
-    </div>
-    <div>
-      <div class="section-eyebrow"><div class="eyebrow-text">Klydo Klub Experience</div><div class="eyebrow-line"></div></div>
-      <div class="card-grid" style="grid-template-columns:1fr 1fr;gap:12px;">
-        <div class="stat-card cyan"><span class="icon">💬</span><div class="val">NPS 72</div><div class="lbl">Industry leading Net Promoter Score</div></div>
-        <div class="stat-card pink"><span class="icon">🛒</span><div class="val">50%</div><div class="lbl">Cart Conversion — users try freely</div></div>
-        <div class="stat-card purple"><span class="icon">💎</span><div class="val">5X</div><div class="lbl">Better retention for Klub buyers vs. others</div></div>
-        <div class="stat-card cyan"><span class="icon">⚡</span><div class="val">1 day</div><div class="lbl">Median gap between successive orders</div></div>
-        <div class="stat-card pink"><span class="icon">🔄</span><div class="val">75%</div><div class="lbl">Repeat orders within 1 week</div></div>
-        <div class="stat-card purple"><span class="icon">🏷</span><div class="val">3.2</div><div class="lbl">Categories purchased by repeat buyers on average</div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SLIDE 4: TEAM -->
-<section class="slide s4" id="team">
-  <div class="slide-label">Founding Team</div>
-  <div class="slide-title">Built the <span>First Layer</span> of eCommerce in India</div>
-  <div class="divider"></div>
-
-  <div class="founder-grid">
-    <div class="founder-card">
-      <div class="founder-top">
-        <div class="founder-img-wrap"><img class="founder-img" src="ankit-agarwal.png" alt="Ankit Agarwal"/></div>
-        <div class="founder-info">
-          <div class="name">Ankit Agarwal</div>
-          <div class="school">IIT Delhi</div>
-        </div>
-      </div>
-      <div class="founder-bullets">
-        <div class="founder-bullet"><div class="fbdot"></div><p><strong>Founding Team @ Udaan (2016–2025):</strong> Built the apparel business from 0 to USD 400M in annual GMV</p></div>
-        <div class="founder-bullet"><div class="fbdot"></div><p><strong>Early Leadership @ Flipkart (2010–2015):</strong> Associate Director of the Lifestyle category, scaled to USD 200M in GMV in 9 months</p></div>
-      </div>
-    </div>
-    <div class="founder-card">
-      <div class="founder-top">
-        <div class="founder-img-wrap"><img class="founder-img" src="pradeep-yadav.png" alt="Pradeep Yadav"/></div>
-        <div class="founder-info">
-          <div class="name">Pradeep Yadav</div>
-          <div class="school">IIT Delhi · IIM Ahmedabad</div>
-        </div>
-      </div>
-      <div class="founder-bullets">
-        <div class="founder-bullet"><div class="fbdot"></div><p><strong>Founding Team + Head of Supply Chain @ Udaan (2016–2025):</strong> Built and scaled cross-category supply chains over 9 years</p></div>
-        <div class="founder-bullet"><div class="fbdot"></div><p><strong>Early Leadership @ Flipkart (2011–2015):</strong> Created the large electronics supply chain and scaled EKart</p></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="slide-label" style="margin-bottom:20px;">Extended Team</div>
-  <div class="ext-grid">
-    <div class="ext-card">
-      <div class="ext-img-wrap"><img class="ext-img" src="sabina-nazneen.png" alt="Sabina Nazneen"/></div>
-      <div class="ext-name">Sabina Nazneen</div>
-      <div class="ext-role">Head of Marketing</div>
-      <div class="ext-desc">Fashion Experience Lead @ Udaan · Associate Director @ Flipkart (2014–2024)</div>
-    </div>
-    <div class="ext-card">
-      <div class="ext-img-wrap"><img class="ext-img" src="manikanta-kondeti.png" alt="Manikanta Kondeti"/></div>
-      <div class="ext-name">Manikanta Kondeti</div>
-      <div class="ext-role">Head of Engineering</div>
-      <div class="ext-desc">Lead Product Engineer @ Udaan · Head of AI @ Launch.Today · IIIT Hyderabad</div>
-    </div>
-    <div class="ext-card">
-      <div class="ext-img-wrap"><img class="ext-img" src="chandnni-nain.png" alt="Chandnni Nain"/></div>
-      <div class="ext-name">Chandnni Nain</div>
-      <div class="ext-role">Chief Business Officer</div>
-      <div class="ext-desc">VP Business @ Groyyo · Private Brands @ Udaan · Director Category @ Hopscotch</div>
-    </div>
-    <div class="ext-card">
-      <div class="ext-img-wrap"><img class="ext-img" src="divya-tak.png" alt="Divya Tak"/></div>
-      <div class="ext-name">Divya Tak</div>
-      <div class="ext-role">Product Design</div>
-      <div class="ext-desc">Independent Product & Game Designer (2012–2025) · VFX Producer "The Fable" (Leeds 2024) · IIT Kharagpur</div>
-    </div>
-    <div class="ext-card">
-      <div class="ext-img-wrap"><img class="ext-img" src="kahran-singh.png" alt="Kahran Singh"/></div>
-      <div class="ext-name">Kahran Singh</div>
-      <div class="ext-role">Chief Revenue Officer</div>
-      <div class="ext-desc">Former CEO @ Vidyanext · GP @ Tres Monos Capital — growth & GTM lead</div>
-    </div>
-  </div>
-</section>
-
-<!-- SLIDE 5: GROWTH -->
-<section class="slide s5" id="growth">
-  <div class="slide-label">Traction</div>
-  <div class="slide-title">Breaking Out: <span>45% WoW Growth</span> since November</div>
-  <div class="divider"></div>
-  <div class="card-grid g2" style="gap:28px;">
-    <div>
-      <div class="slide-label" style="margin-bottom:16px;">Orders</div>
-      <div class="chart-bar-wrap">
-        <div class="bar-item"><div class="bar-label">November</div><div class="bar-track"><div class="bar-fill" style="width:22%">830</div></div></div>
-        <div class="bar-item"><div class="bar-label">December</div><div class="bar-track"><div class="bar-fill" style="width:38%">1,428</div></div></div>
-        <div class="bar-item"><div class="bar-label">January</div><div class="bar-track"><div class="bar-fill" style="width:100%">3,769</div></div></div>
-      </div>
-      <div class="slide-label" style="margin:28px 0 16px;">Average Order Value (₹)</div>
-      <div class="chart-bar-wrap">
-        <div class="bar-item"><div class="bar-label">November</div><div class="bar-track"><div class="bar-fill" style="width:30%">450</div></div></div>
-        <div class="bar-item"><div class="bar-label">December</div><div class="bar-track"><div class="bar-fill" style="width:81%">1,221</div></div></div>
-        <div class="bar-item"><div class="bar-label">January</div><div class="bar-track"><div class="bar-fill" style="width:100%">1,511</div></div></div>
-      </div>
-    </div>
-    <div>
-      <div class="slide-label" style="margin-bottom:16px;">GMV (INR Lakhs)</div>
-      <div class="chart-bar-wrap">
-        <div class="bar-item"><div class="bar-label">November</div><div class="bar-track"><div class="bar-fill" style="width:7%">3.7L</div></div></div>
-        <div class="bar-item"><div class="bar-label">December</div><div class="bar-track"><div class="bar-fill" style="width:30%">17L</div></div></div>
-        <div class="bar-item"><div class="bar-label">January</div><div class="bar-track"><div class="bar-fill" style="width:100%">57L</div></div></div>
-      </div>
-      <div class="slide-label" style="margin:28px 0 16px;">MoM Orders / Buyer (Cohort)</div>
-      <div class="metrics-row" style="margin-top:8px;">
-        <div class="metric"><div class="m-val">1.3</div><div class="m-lbl">M0</div></div>
-        <div class="metric"><div class="m-val">3.2</div><div class="m-lbl">M1</div></div>
-        <div class="metric"><div class="m-val">4.4</div><div class="m-lbl">M2</div></div>
-        <div class="metric"><div class="m-val">5.3</div><div class="m-lbl">M3</div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SLIDE 6: HYPERSCALE -->
-<section class="slide s6" id="scale">
-  <div class="slide-label">Hyperscale</div>
-  <div class="slide-title">INR <span>100 Cr in GMV</span> by JAS26</div>
-  <div class="divider"></div>
-  <div class="card-grid g2" style="gap:28px;">
-    <div>
-      <div class="slide-label" style="margin-bottom:16px;">Monthly GMV Trajectory (INR Cr)</div>
-      <div class="chart-bar-wrap">
-        <div class="bar-item"><div class="bar-label">Jan 26</div><div class="bar-track"><div class="bar-fill" style="width:15%">1.43</div></div></div>
-        <div class="bar-item"><div class="bar-label">Feb 26</div><div class="bar-track"><div class="bar-fill" style="width:30%">2.86</div></div></div>
-        <div class="bar-item"><div class="bar-label">Mar 26</div><div class="bar-track"><div class="bar-fill" style="width:50%">4.76</div></div></div>
-        <div class="bar-item"><div class="bar-label">Apr 26</div><div class="bar-track"><div class="bar-fill" style="width:75%">7.14</div></div></div>
-        <div class="bar-item"><div class="bar-label">Jun 26</div><div class="bar-track"><div class="bar-fill" style="width:100%">9.52</div></div></div>
-      </div>
-    </div>
-    <div>
-      <div class="slide-label" style="margin-bottom:16px;">Orders Per Day</div>
-      <div class="chart-bar-wrap">
-        <div class="bar-item"><div class="bar-label">Jan 26</div><div class="bar-track"><div class="bar-fill" style="width:16%">321</div></div></div>
-        <div class="bar-item"><div class="bar-label">Feb 26</div><div class="bar-track"><div class="bar-fill" style="width:32%">631</div></div></div>
-        <div class="bar-item"><div class="bar-label">Mar 26</div><div class="bar-track"><div class="bar-fill" style="width:52%">1,033</div></div></div>
-        <div class="bar-item"><div class="bar-label">Apr 26</div><div class="bar-track"><div class="bar-fill" style="width:76%">1,521</div></div></div>
-        <div class="bar-item"><div class="bar-label">Jun 26</div><div class="bar-track"><div class="bar-fill" style="width:100%">1,992</div></div></div>
-      </div>
-    </div>
-  </div>
-  <div style="margin-top:36px;">
-    <div class="slide-label" style="margin-bottom:16px;">Dark Store Rollout — 20 Stores · 3 States by OND26</div>
-    <div class="card-grid" style="grid-template-columns:repeat(6,1fr);gap:12px;">
-      <div class="stat-card"><div class="val">1</div><div class="lbl">Jan 26<br/><span style="color:#FF2D8A;">BLR</span></div></div>
-      <div class="stat-card"><div class="val">1</div><div class="lbl">Feb 26<br/><span style="color:#FF2D8A;">BLR</span></div></div>
-      <div class="stat-card"><div class="val">2</div><div class="lbl">Mar 26<br/><span style="color:#FF2D8A;">BLR</span></div></div>
-      <div class="stat-card"><div class="val">5</div><div class="lbl">Apr 26<br/><span style="color:#FF2D8A;">BLR + DEL-NCR</span></div></div>
-      <div class="stat-card"><div class="val">15</div><div class="lbl">JAS 26<br/><span style="color:#FF2D8A;">BLR + DEL-NCR</span></div></div>
-      <div class="stat-card" style="background:linear-gradient(135deg,rgba(255,45,138,.15),rgba(139,69,214,.15));"><div class="val">20</div><div class="lbl">OND 26<br/><span style="color:#FF2D8A;">BLR + DEL-NCR + BOM</span></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- SLIDE 7: CURATION -->
-<section class="slide s7">
-  <div class="slide-label">Curation</div>
-  <div class="slide-title"><span>40/80</span> Brand Contribution · 40% Sell Through</div>
-  <div class="divider"></div>
-  <div class="card-grid g2" style="gap:28px;align-items:start;">
-    <div>
-      <div class="highlight">
-        <p><strong>40% of our brands</strong> drive <strong>80% of our revenue</strong> vs 20% of brands driving 80% of revenue for competitors.</p>
-        <p style="margin-top:12px;">Our product ensures <strong>equal visibility and discovery for brands</strong> to uncover more hero brands for our audience.</p>
-      </div>
-      <div class="metrics-row" style="margin-top:20px;">
-        <div class="metric"><div class="m-val">40/80</div><div class="m-lbl">Pareto — industry leading</div></div>
-        <div class="metric"><div class="m-val">40%</div><div class="m-lbl">Median sell-through in first 6 weeks</div></div>
-      </div>
-    </div>
-    <div class="card" style="padding:32px;">
-      <div class="slide-label" style="margin-bottom:20px;">Sell-Through Distribution</div>
-      <div style="display:flex;flex-direction:column;gap:10px;">
-        <div style="display:flex;justify-content:space-between;font-size:13px;color:rgba(0,0,0,.35);"><span>0%</span><span>Sell Through →</span><span>60%+</span></div>
-        <div style="font-size:12px;font-weight:700;color:#1a1a2e;padding-left:35%;margin-bottom:4px;">↓ 40% median</div>
-        <div style="height:80px;background:rgba(0,0,0,.02);border-radius:12px;position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:0 10px 10px;gap:3px;">
-          <div style="width:8%;height:20%;background:rgba(255,45,138,.2);border-radius:4px 4px 0 0;"></div>
-          <div style="width:8%;height:35%;background:rgba(255,45,138,.3);border-radius:4px 4px 0 0;"></div>
-          <div style="width:8%;height:55%;background:rgba(255,45,138,.4);border-radius:4px 4px 0 0;"></div>
-          <div style="width:8%;height:75%;background:rgba(255,45,138,.55);border-radius:4px 4px 0 0;"></div>
-          <div style="width:8%;height:100%;background:linear-gradient(180deg,#FF2D8A,#8B45D6);border-radius:4px 4px 0 0;"></div>
-          <div style="width:8%;height:85%;background:rgba(139,69,214,.5);border-radius:4px 4px 0 0;"></div>
-          <div style="width:8%;height:60%;background:rgba(139,69,214,.35);border-radius:4px 4px 0 0;"></div>
-          <div style="width:8%;height:40%;background:rgba(139,69,214,.25);border-radius:4px 4px 0 0;"></div>
-          <div style="width:8%;height:25%;background:rgba(139,69,214,.15);border-radius:4px 4px 0 0;"></div>
-          <div style="width:8%;height:15%;background:rgba(139,69,214,.1);border-radius:4px 4px 0 0;"></div>
-        </div>
-        <p style="font-size:13px;color:rgba(0,0,0,.35);text-align:center;">40% median sell-through across all brands in 6 weeks of operations</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SLIDE 8: BRANDS -->
-<section class="slide s8" id="brands">
-  <div class="slide-label">Brand Universe</div>
-  <div class="slide-title">Legacy + New-Age D2C <span>for Core Audience</span></div>
-  <div class="divider"></div>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start;">
-    <div style="border-radius:16px;overflow:hidden;background:#f7f7f8;">
-      <img src="brand-universe.png" alt="Brand Universe" style="width:100%;display:block;object-fit:contain;"/>
-    </div>
-    <div class="brand-grid" style="align-content:start;">
-      <div class="brand-pill">PALMONAS</div><div class="brand-pill">GIVA</div><div class="brand-pill">CHUPPS</div>
-      <div class="brand-pill">ecoright</div><div class="brand-pill">MAIN CHARACTER</div><div class="brand-pill">PUMA</div>
-      <div class="brand-pill">Levi's</div><div class="brand-pill">SASSAFRAS</div><div class="brand-pill">SHAE by SASSAFRAS</div>
-      <div class="brand-pill">CHUMBAK</div><div class="brand-pill">bauge.</div><div class="brand-pill">JUST LIL THINGS</div>
-      <div class="brand-pill">BERSACHE</div><div class="brand-pill">Bewakoof</div><div class="brand-pill">The Souled Store</div>
-      <div class="brand-pill">REDTAPE</div><div class="brand-pill">JOCKEY</div><div class="brand-pill">TECHNOSPORT</div>
-      <div class="brand-pill">Dressy Daiquiri</div><div class="brand-pill">METRO SHOES</div><div class="brand-pill">Campus</div>
-      <div class="brand-pill">VAN HEUSEN</div><div class="brand-pill">PETER ENGLAND</div><div class="brand-pill">Lancer Footwear</div>
-      <div class="brand-pill">TIGC</div><div class="brand-pill">THE INDIAN GARAGE CO</div><div class="brand-pill">LOUIS PHILIPPE</div>
-      <div class="brand-pill">AMERICAN EAGLE OUTFITTERS</div>
-    </div>
-  </div>
 </section>
 
 <!-- SLIDE 9: HM NOW -->
@@ -371,7 +94,6 @@
           <h3>Purchase Order / Stock Transfer</h3><span class="tag purple" style="font-size:11px;">Step 2</span>
         </div>
         <p>Klydo shares a PO/STN to move stock to the Klydo Darkstore. Inwards processed on Fynd — products go live on HMNow.</p>
-        <div class="t-sub" style="margin-top:10px;"><p><strong>Omni variant:</strong> H&M store set up as darkstore in Fynd. POS integrated for styles & stock. Store sales pushed via API, reducing stock from Fynd in real-time.</p></div>
       </div>
     </div>
     <div style="text-align:center;color:#FF2D8A;font-size:24px;transform:rotate(90deg);">&#x276F;</div>
@@ -395,7 +117,6 @@
           <h3>Integrated Order Management</h3><span class="tag" style="font-size:11px;">Step 4</span>
         </div>
         <p>Orders transmitted to Fynd's OMS for fulfillment. Klydo manages warehouse pick & pack. Webhooks push shipment and delivery events back to HMNow.</p>
-        <div class="t-sub" style="margin-top:10px;"><p><strong>Omni variant:</strong> Order instantly pushed to H&M POS — stock reduced automatically. Store staff packs and labels the order separately.</p></div>
       </div>
     </div>
     <div style="text-align:center;color:#8B45D6;font-size:24px;transform:rotate(90deg);">&#x276F;</div>
@@ -732,9 +453,361 @@
   </div>
 </section>
 
+<!-- SLIDE 15: COMMERCIAL MODEL -->
+<section class="slide s15" id="commercial">
+  <span class="slide-label">Commercial Model</span>
+  <h2 class="slide-title">Simple, Transparent <span>Pricing</span></h2>
+  <div class="divider"></div>
+
+  <!-- Two-column layout: One-Time + Ongoing -->
+  <div class="card-grid g2" style="margin-bottom:32px;">
+
+    <!-- One-Time Tech Cost -->
+    <div class="card" style="background:rgba(139,69,214,.06);padding:32px;">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:20px;">
+        <span class="tag purple">One-Time</span>
+        <span style="font-size:13px;color:rgba(0,0,0,.35);font-weight:600;">Platform Development</span>
+      </div>
+      <div style="text-align:center;padding:16px 0 20px;">
+        <div style="font-size:48px;font-weight:700;background:linear-gradient(135deg,#8B45D6,#FF2D8A);-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1.1;">₹12 Lakhs</div>
+        <div style="font-size:14px;color:rgba(0,0,0,.4);margin-top:8px;font-weight:600;">2.5 – 3 Month Delivery</div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div style="display:flex;gap:10px;align-items:flex-start;">
+          <span style="color:#8B45D6;font-size:14px;margin-top:2px;">✦</span>
+          <p style="font-size:14px;color:rgba(0,0,0,.5);line-height:1.6;">White-labeled <strong style="color:#1a1a2e;">HM NOW</strong> app (iOS + Android) + web</p>
+        </div>
+        <div style="display:flex;gap:10px;align-items:flex-start;">
+          <span style="color:#8B45D6;font-size:14px;margin-top:2px;">✦</span>
+          <p style="font-size:14px;color:rgba(0,0,0,.5);line-height:1.6;"><strong style="color:#1a1a2e;">Klydo Commerce Backend</strong> + <strong style="color:#1a1a2e;">Klydo AI</strong> deployed in H&amp;M's cloud</p>
+        </div>
+        <div style="display:flex;gap:10px;align-items:flex-start;">
+          <span style="color:#8B45D6;font-size:14px;margin-top:2px;">✦</span>
+          <p style="font-size:14px;color:rgba(0,0,0,.5);line-height:1.6;">Fynd OMS/WMS/TMS integration</p>
+        </div>
+        <div style="display:flex;gap:10px;align-items:flex-start;">
+          <span style="color:#8B45D6;font-size:14px;margin-top:2px;">✦</span>
+          <p style="font-size:14px;color:rgba(0,0,0,.5);line-height:1.6;">End-to-end testing, QA &amp; launch support</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ongoing Commission -->
+    <div class="card" style="background:rgba(255,45,138,.06);padding:32px;">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:20px;">
+        <span class="tag">Ongoing</span>
+        <span style="font-size:13px;color:rgba(0,0,0,.35);font-weight:600;">Per-Order Commission</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:16px;padding:16px 0 20px;">
+        <!-- Commission row 1 -->
+        <div style="display:flex;align-items:center;gap:16px;">
+          <div style="flex:1;background:rgba(255,45,138,.08);border-radius:12px;padding:18px 20px;text-align:center;">
+            <div style="font-size:36px;font-weight:700;color:#FF2D8A;line-height:1.1;">15%</div>
+            <div style="font-size:12px;color:rgba(0,0,0,.4);margin-top:6px;font-weight:600;line-height:1.4;">Commission</div>
+          </div>
+          <div style="font-size:24px;font-weight:700;color:rgba(0,0,0,.15);">+</div>
+          <div style="flex:1;background:rgba(139,69,214,.08);border-radius:12px;padding:18px 20px;text-align:center;">
+            <div style="font-size:36px;font-weight:700;color:#8B45D6;line-height:1.1;">15%</div>
+            <div style="font-size:12px;color:rgba(0,0,0,.4);margin-top:6px;font-weight:600;line-height:1.4;">Actual Logistics<br/>(Last-Mile Delivery)</div>
+          </div>
+        </div>
+        <!-- Total -->
+        <div style="background:linear-gradient(135deg,#FF2D8A,#8B45D6);border-radius:12px;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;">
+          <span style="font-size:14px;font-weight:600;color:rgba(255,255,255,.8);">Total Commission per Order</span>
+          <span style="font-size:28px;font-weight:700;color:#fff;">30%</span>
+        </div>
+      </div>
+      <p style="font-size:13px;color:rgba(0,0,0,.35);line-height:1.6;text-align:center;font-weight:400;">Commission on delivered order value · No hidden fees · No minimum commitment</p>
+    </div>
+  </div>
+
+  <!-- Summary Highlight -->
+  <div class="highlight" style="background:linear-gradient(135deg,rgba(255,45,138,.06),rgba(139,69,214,.06));margin:0;">
+    <p style="text-align:center;"><strong style="color:#1a1a2e;">H&amp;M invests ₹12L once</strong> — gets a fully branded quick-commerce channel live in Bangalore. Klydo handles everything from dark stores to doorstep. <strong>H&amp;M pays only when orders are delivered.</strong></p>
+  </div>
+</section>
+
+<!-- SLIDE 2: WHY NOW -->
+<section class="slide s2" id="why">
+  <div class="slide-label">Market Thesis</div>
+  <div class="slide-title">Why Now? Market Expanding <span>through Frequency</span></div>
+  <div class="divider"></div>
+  <div style="max-width:800px;">
+    <div class="highlight">
+      <p><strong>Desire</strong> for shopping has always existed. Speed does not create demand.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px;margin:8px 0 32px;">
+      <div class="card" style="background:rgba(255,45,138,.07);">
+        <div style="display:flex;gap:12px;align-items:flex-start;">
+          <span class="tag" style="flex-shrink:0;margin-top:2px;">Step 1</span>
+          <p style="font-size:15px;color:rgba(0,0,0,.6);">Shopping desire exists latently — some realized, some unrealized / forgotten</p>
+        </div>
+      </div>
+      <div style="text-align:center;color:#8B45D6;font-size:24px;transform:rotate(90deg);">&#x276F;</div>
+      <div class="card" style="background:rgba(139,69,214,.07);">
+        <div style="display:flex;gap:12px;align-items:flex-start;">
+          <span class="tag purple" style="flex-shrink:0;margin-top:2px;">Step 2</span>
+          <p style="font-size:15px;color:rgba(0,0,0,.6);">Speed converts <strong style="color:#8B45D6;">latent desire</strong> into <strong style="color:#FF2D8A;">realized demand</strong> — the cost of acting on desire has collapsed <em style="color:rgba(0,0,0,.35);font-size:13px;">(reduced time to product)</em></p>
+        </div>
+      </div>
+      <div style="text-align:center;color:#FF2D8A;font-size:24px;transform:rotate(90deg);">&#x276F;</div>
+      <div class="card" style="background:rgba(0,212,220,.07);">
+        <div style="display:flex;gap:12px;align-items:flex-start;">
+          <span class="tag cyan" style="flex-shrink:0;margin-top:2px;">Outcome</span>
+          <p style="font-size:15px;color:#1a1a2e;"><strong style="color:#FF2D8A;">More shopping moments per user</strong> become monetizable</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 3: PMF -->
+<section class="slide s3" id="pmf">
+  <div class="slide-label">Product Market Fit</div>
+  <div class="slide-title">10X Assortment + 10X Experience <span>→ PMF</span></div>
+  <div class="divider"></div>
+  <div class="card-grid g2" style="margin-bottom:24px;">
+    <div>
+      <div class="section-eyebrow"><div class="eyebrow-text">Demand + Discovery</div><div class="eyebrow-line"></div></div>
+      <div class="card-grid" style="grid-template-columns:1fr 1fr;gap:12px;">
+        <div class="stat-card pink"><span class="icon">⏱</span><div class="val">30+ min</div><div class="lbl">Time spent/week per registered user for 10+ weeks</div></div>
+        <div class="stat-card purple"><span class="icon">🔁</span><div class="val">2X</div><div class="lbl">Retention for buyers who shop through feed</div></div>
+        <div class="stat-card cyan"><span class="icon">🛍</span><div class="val">25%</div><div class="lbl">Orders with products added via collections</div></div>
+        <div class="stat-card pink"><span class="icon">📊</span><div class="val">40/80</div><div class="lbl">Pareto — industry leading brand contribution</div></div>
+        <div class="stat-card purple"><span class="icon">✨</span><div class="val">35%</div><div class="lbl">Selection exclusive from Slikk and Myntra</div></div>
+        <div class="stat-card cyan"><span class="icon">👀</span><div class="val">30+</div><div class="lbl">Products viewed before purchase</div></div>
+        <div class="stat-card pink" style="grid-column:span 2;"><span class="icon">📦</span><div class="val">45 DOH</div><div class="lbl">Days of holding keeps selection perpetually fresh</div></div>
+      </div>
+    </div>
+    <div>
+      <div class="section-eyebrow"><div class="eyebrow-text">Klydo Klub Experience</div><div class="eyebrow-line"></div></div>
+      <div class="card-grid" style="grid-template-columns:1fr 1fr;gap:12px;">
+        <div class="stat-card cyan"><span class="icon">💬</span><div class="val">NPS 72</div><div class="lbl">Industry leading Net Promoter Score</div></div>
+        <div class="stat-card pink"><span class="icon">🛒</span><div class="val">50%</div><div class="lbl">Cart Conversion — users try freely</div></div>
+        <div class="stat-card purple"><span class="icon">💎</span><div class="val">5X</div><div class="lbl">Better retention for Klub buyers vs. others</div></div>
+        <div class="stat-card cyan"><span class="icon">⚡</span><div class="val">1 day</div><div class="lbl">Median gap between successive orders</div></div>
+        <div class="stat-card pink"><span class="icon">🔄</span><div class="val">75%</div><div class="lbl">Repeat orders within 1 week</div></div>
+        <div class="stat-card purple"><span class="icon">🏷</span><div class="val">3.2</div><div class="lbl">Categories purchased by repeat buyers on average</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 4: TEAM -->
+<section class="slide s4" id="team">
+  <div class="slide-label">Founding Team</div>
+  <div class="slide-title">Built the <span>First Layer</span> of eCommerce in India</div>
+  <div class="divider"></div>
+
+  <div class="founder-grid">
+    <div class="founder-card">
+      <div class="founder-top">
+        <div class="founder-img-wrap"><img class="founder-img" src="ankit-agarwal.png" alt="Ankit Agarwal"/></div>
+        <div class="founder-info">
+          <div class="name">Ankit Agarwal</div>
+          <div class="school">IIT Delhi</div>
+        </div>
+      </div>
+      <div class="founder-bullets">
+        <div class="founder-bullet"><div class="fbdot"></div><p><strong>Founding Team @ Udaan (2016–2025):</strong> Built the apparel business from 0 to USD 400M in annual GMV</p></div>
+        <div class="founder-bullet"><div class="fbdot"></div><p><strong>Early Leadership @ Flipkart (2010–2015):</strong> Associate Director of the Lifestyle category, scaled to USD 200M in GMV in 9 months</p></div>
+      </div>
+    </div>
+    <div class="founder-card">
+      <div class="founder-top">
+        <div class="founder-img-wrap"><img class="founder-img" src="pradeep-yadav.png" alt="Pradeep Yadav"/></div>
+        <div class="founder-info">
+          <div class="name">Pradeep Yadav</div>
+          <div class="school">IIT Delhi · IIM Ahmedabad</div>
+        </div>
+      </div>
+      <div class="founder-bullets">
+        <div class="founder-bullet"><div class="fbdot"></div><p><strong>Founding Team + Head of Supply Chain @ Udaan (2016–2025):</strong> Built and scaled cross-category supply chains over 9 years</p></div>
+        <div class="founder-bullet"><div class="fbdot"></div><p><strong>Early Leadership @ Flipkart (2011–2015):</strong> Created the large electronics supply chain and scaled EKart</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide-label" style="margin-bottom:20px;">Extended Team</div>
+  <div class="ext-grid">
+    <div class="ext-card">
+      <div class="ext-img-wrap"><img class="ext-img" src="sabina-nazneen.png" alt="Sabina Nazneen"/></div>
+      <div class="ext-name">Sabina Nazneen</div>
+      <div class="ext-role">Head of Marketing</div>
+      <div class="ext-desc">Fashion Experience Lead @ Udaan · Associate Director @ Flipkart (2014–2024)</div>
+    </div>
+    <div class="ext-card">
+      <div class="ext-img-wrap"><img class="ext-img" src="manikanta-kondeti.png" alt="Manikanta Kondeti"/></div>
+      <div class="ext-name">Manikanta Kondeti</div>
+      <div class="ext-role">Head of Engineering</div>
+      <div class="ext-desc">Lead Product Engineer @ Udaan · Head of AI @ Launch.Today · IIIT Hyderabad</div>
+    </div>
+    <div class="ext-card">
+      <div class="ext-img-wrap"><img class="ext-img" src="chandnni-nain.png" alt="Chandnni Nain"/></div>
+      <div class="ext-name">Chandnni Nain</div>
+      <div class="ext-role">Chief Business Officer</div>
+      <div class="ext-desc">VP Business @ Groyyo · Private Brands @ Udaan · Director Category @ Hopscotch</div>
+    </div>
+    <div class="ext-card">
+      <div class="ext-img-wrap"><img class="ext-img" src="divya-tak.png" alt="Divya Tak"/></div>
+      <div class="ext-name">Divya Tak</div>
+      <div class="ext-role">Product Design</div>
+      <div class="ext-desc">Independent Product & Game Designer (2012–2025) · VFX Producer "The Fable" (Leeds 2024) · IIT Kharagpur</div>
+    </div>
+    <div class="ext-card">
+      <div class="ext-img-wrap"><img class="ext-img" src="kahran-singh.png" alt="Kahran Singh"/></div>
+      <div class="ext-name">Kahran Singh</div>
+      <div class="ext-role">Chief Revenue Officer</div>
+      <div class="ext-desc">Former CEO @ Vidyanext · GP @ Tres Monos Capital — growth & GTM lead</div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 5: GROWTH -->
+<section class="slide s5" id="growth">
+  <div class="slide-label">Traction</div>
+  <div class="slide-title">Breaking Out: <span>45% WoW Growth</span> since November</div>
+  <div class="divider"></div>
+  <div class="card-grid g2" style="gap:28px;">
+    <div>
+      <div class="slide-label" style="margin-bottom:16px;">Orders</div>
+      <div class="chart-bar-wrap">
+        <div class="bar-item"><div class="bar-label">November</div><div class="bar-track"><div class="bar-fill" style="width:22%">830</div></div></div>
+        <div class="bar-item"><div class="bar-label">December</div><div class="bar-track"><div class="bar-fill" style="width:38%">1,428</div></div></div>
+        <div class="bar-item"><div class="bar-label">January</div><div class="bar-track"><div class="bar-fill" style="width:100%">3,769</div></div></div>
+      </div>
+      <div class="slide-label" style="margin:28px 0 16px;">Average Order Value (₹)</div>
+      <div class="chart-bar-wrap">
+        <div class="bar-item"><div class="bar-label">November</div><div class="bar-track"><div class="bar-fill" style="width:30%">450</div></div></div>
+        <div class="bar-item"><div class="bar-label">December</div><div class="bar-track"><div class="bar-fill" style="width:81%">1,221</div></div></div>
+        <div class="bar-item"><div class="bar-label">January</div><div class="bar-track"><div class="bar-fill" style="width:100%">1,511</div></div></div>
+      </div>
+    </div>
+    <div>
+      <div class="slide-label" style="margin-bottom:16px;">GMV (INR Lakhs)</div>
+      <div class="chart-bar-wrap">
+        <div class="bar-item"><div class="bar-label">November</div><div class="bar-track"><div class="bar-fill" style="width:7%">3.7L</div></div></div>
+        <div class="bar-item"><div class="bar-label">December</div><div class="bar-track"><div class="bar-fill" style="width:30%">17L</div></div></div>
+        <div class="bar-item"><div class="bar-label">January</div><div class="bar-track"><div class="bar-fill" style="width:100%">57L</div></div></div>
+      </div>
+      <div class="slide-label" style="margin:28px 0 16px;">MoM Orders / Buyer (Cohort)</div>
+      <div class="metrics-row" style="margin-top:8px;">
+        <div class="metric"><div class="m-val">1.3</div><div class="m-lbl">M0</div></div>
+        <div class="metric"><div class="m-val">3.2</div><div class="m-lbl">M1</div></div>
+        <div class="metric"><div class="m-val">4.4</div><div class="m-lbl">M2</div></div>
+        <div class="metric"><div class="m-val">5.3</div><div class="m-lbl">M3</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 6: HYPERSCALE -->
+<section class="slide s6" id="scale">
+  <div class="slide-label">Hyperscale</div>
+  <div class="slide-title">INR <span>100 Cr in GMV</span> by JAS26</div>
+  <div class="divider"></div>
+  <div class="card-grid g2" style="gap:28px;">
+    <div>
+      <div class="slide-label" style="margin-bottom:16px;">Monthly GMV Trajectory (INR Cr)</div>
+      <div class="chart-bar-wrap">
+        <div class="bar-item"><div class="bar-label">Jan 26</div><div class="bar-track"><div class="bar-fill" style="width:15%">1.43</div></div></div>
+        <div class="bar-item"><div class="bar-label">Feb 26</div><div class="bar-track"><div class="bar-fill" style="width:30%">2.86</div></div></div>
+        <div class="bar-item"><div class="bar-label">Mar 26</div><div class="bar-track"><div class="bar-fill" style="width:50%">4.76</div></div></div>
+        <div class="bar-item"><div class="bar-label">Apr 26</div><div class="bar-track"><div class="bar-fill" style="width:75%">7.14</div></div></div>
+        <div class="bar-item"><div class="bar-label">Jun 26</div><div class="bar-track"><div class="bar-fill" style="width:100%">9.52</div></div></div>
+      </div>
+    </div>
+    <div>
+      <div class="slide-label" style="margin-bottom:16px;">Orders Per Day</div>
+      <div class="chart-bar-wrap">
+        <div class="bar-item"><div class="bar-label">Jan 26</div><div class="bar-track"><div class="bar-fill" style="width:16%">321</div></div></div>
+        <div class="bar-item"><div class="bar-label">Feb 26</div><div class="bar-track"><div class="bar-fill" style="width:32%">631</div></div></div>
+        <div class="bar-item"><div class="bar-label">Mar 26</div><div class="bar-track"><div class="bar-fill" style="width:52%">1,033</div></div></div>
+        <div class="bar-item"><div class="bar-label">Apr 26</div><div class="bar-track"><div class="bar-fill" style="width:76%">1,521</div></div></div>
+        <div class="bar-item"><div class="bar-label">Jun 26</div><div class="bar-track"><div class="bar-fill" style="width:100%">1,992</div></div></div>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top:36px;">
+    <div class="slide-label" style="margin-bottom:16px;">Dark Store Rollout — 20 Stores · 3 States by OND26</div>
+    <div class="card-grid" style="grid-template-columns:repeat(6,1fr);gap:12px;">
+      <div class="stat-card"><div class="val">1</div><div class="lbl">Jan 26<br/><span style="color:#FF2D8A;">BLR</span></div></div>
+      <div class="stat-card"><div class="val">1</div><div class="lbl">Feb 26<br/><span style="color:#FF2D8A;">BLR</span></div></div>
+      <div class="stat-card"><div class="val">2</div><div class="lbl">Mar 26<br/><span style="color:#FF2D8A;">BLR</span></div></div>
+      <div class="stat-card"><div class="val">5</div><div class="lbl">Apr 26<br/><span style="color:#FF2D8A;">BLR + DEL-NCR</span></div></div>
+      <div class="stat-card"><div class="val">15</div><div class="lbl">JAS 26<br/><span style="color:#FF2D8A;">BLR + DEL-NCR</span></div></div>
+      <div class="stat-card" style="background:linear-gradient(135deg,rgba(255,45,138,.15),rgba(139,69,214,.15));"><div class="val">20</div><div class="lbl">OND 26<br/><span style="color:#FF2D8A;">BLR + DEL-NCR + BOM</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 7: CURATION -->
+<section class="slide s7">
+  <div class="slide-label">Curation</div>
+  <div class="slide-title"><span>40/80</span> Brand Contribution · 40% Sell Through</div>
+  <div class="divider"></div>
+  <div class="card-grid g2" style="gap:28px;align-items:start;">
+    <div>
+      <div class="highlight">
+        <p><strong>40% of our brands</strong> drive <strong>80% of our revenue</strong> vs 20% of brands driving 80% of revenue for competitors.</p>
+        <p style="margin-top:12px;">Our product ensures <strong>equal visibility and discovery for brands</strong> to uncover more hero brands for our audience.</p>
+      </div>
+      <div class="metrics-row" style="margin-top:20px;">
+        <div class="metric"><div class="m-val">40/80</div><div class="m-lbl">Pareto — industry leading</div></div>
+        <div class="metric"><div class="m-val">40%</div><div class="m-lbl">Median sell-through in first 6 weeks</div></div>
+      </div>
+    </div>
+    <div class="card" style="padding:32px;">
+      <div class="slide-label" style="margin-bottom:20px;">Sell-Through Distribution</div>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div style="display:flex;justify-content:space-between;font-size:13px;color:rgba(0,0,0,.35);"><span>0%</span><span>Sell Through →</span><span>60%+</span></div>
+        <div style="font-size:12px;font-weight:700;color:#1a1a2e;padding-left:35%;margin-bottom:4px;">↓ 40% median</div>
+        <div style="height:80px;background:rgba(0,0,0,.02);border-radius:12px;position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:0 10px 10px;gap:3px;">
+          <div style="width:8%;height:20%;background:rgba(255,45,138,.2);border-radius:4px 4px 0 0;"></div>
+          <div style="width:8%;height:35%;background:rgba(255,45,138,.3);border-radius:4px 4px 0 0;"></div>
+          <div style="width:8%;height:55%;background:rgba(255,45,138,.4);border-radius:4px 4px 0 0;"></div>
+          <div style="width:8%;height:75%;background:rgba(255,45,138,.55);border-radius:4px 4px 0 0;"></div>
+          <div style="width:8%;height:100%;background:linear-gradient(180deg,#FF2D8A,#8B45D6);border-radius:4px 4px 0 0;"></div>
+          <div style="width:8%;height:85%;background:rgba(139,69,214,.5);border-radius:4px 4px 0 0;"></div>
+          <div style="width:8%;height:60%;background:rgba(139,69,214,.35);border-radius:4px 4px 0 0;"></div>
+          <div style="width:8%;height:40%;background:rgba(139,69,214,.25);border-radius:4px 4px 0 0;"></div>
+          <div style="width:8%;height:25%;background:rgba(139,69,214,.15);border-radius:4px 4px 0 0;"></div>
+          <div style="width:8%;height:15%;background:rgba(139,69,214,.1);border-radius:4px 4px 0 0;"></div>
+        </div>
+        <p style="font-size:13px;color:rgba(0,0,0,.35);text-align:center;">40% median sell-through across all brands in 6 weeks of operations</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 8: BRANDS -->
+<section class="slide s8" id="brands">
+  <div class="slide-label">Brand Universe</div>
+  <div class="slide-title">Legacy + New-Age D2C <span>for Core Audience</span></div>
+  <div class="divider"></div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start;">
+    <div style="border-radius:16px;overflow:hidden;background:#f7f7f8;">
+      <img src="brand-universe.png" alt="Brand Universe" style="width:100%;display:block;object-fit:contain;"/>
+    </div>
+    <div class="brand-grid" style="align-content:start;">
+      <div class="brand-pill">PALMONAS</div><div class="brand-pill">GIVA</div><div class="brand-pill">CHUPPS</div>
+      <div class="brand-pill">ecoright</div><div class="brand-pill">MAIN CHARACTER</div><div class="brand-pill">PUMA</div>
+      <div class="brand-pill">Levi's</div><div class="brand-pill">SASSAFRAS</div><div class="brand-pill">SHAE by SASSAFRAS</div>
+      <div class="brand-pill">CHUMBAK</div><div class="brand-pill">bauge.</div><div class="brand-pill">JUST LIL THINGS</div>
+      <div class="brand-pill">BERSACHE</div><div class="brand-pill">Bewakoof</div><div class="brand-pill">The Souled Store</div>
+      <div class="brand-pill">REDTAPE</div><div class="brand-pill">JOCKEY</div><div class="brand-pill">TECHNOSPORT</div>
+      <div class="brand-pill">Dressy Daiquiri</div><div class="brand-pill">METRO SHOES</div><div class="brand-pill">Campus</div>
+      <div class="brand-pill">VAN HEUSEN</div><div class="brand-pill">PETER ENGLAND</div><div class="brand-pill">Lancer Footwear</div>
+      <div class="brand-pill">TIGC</div><div class="brand-pill">THE INDIAN GARAGE CO</div><div class="brand-pill">LOUIS PHILIPPE</div>
+      <div class="brand-pill">AMERICAN EAGLE OUTFITTERS</div>
+    </div>
+  </div>
+</section>
+
+
 <script>
   window.addEventListener('scroll', () => {
-    const ids = ['why','pmf','team','growth','scale','brands','hm','arch','journey','security','move-now'];
+    const ids = ['hm','arch','journey','security','move-now','commercial','why','pmf','team','growth','scale','brands'];
     const pills = document.querySelectorAll('.nav-pill');
     let cur = -1;
     ids.forEach((id,i)=>{const el=document.getElementById(id);if(el&&window.scrollY>=el.offsetTop-200)cur=i+1;});
